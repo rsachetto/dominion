@@ -1,33 +1,34 @@
- <form role="form">
-        <div class="form-group">
-            <label for="name">Nome do torneio:</label>
-            <input type="text" class="form-control" id="name" placeholder="Nome do torneio">
-        </div>
-        <div class="form-group">
-            <label for="datetimepicker">Data de realização:</label>
-            <input type="text" class="form-control" id="datetimepicker" placeholder="Data de realização">
-        </div>
-     <script type="text/javascript">
-         $(function () {
-             $('#datetimepicker').datetimepicker({
-                 format: 'L'
-             });
-         });
-     </script>
-     <div class="clearfix"></div>
-     <br><br>
-     <div class="form-group">
-         <label for="user-search">Adicionar Jogadores</label>
-         <input type="text" class="form-control" id="user-search" placeholder="Buscar jogador">
-         <script type="text/javascript">
-             $('#user-search').typeahead({
-                 name: 'user-search',
-                 remote: '/search_users.php?query=%QUERY',
-                 minLength: 3, // send AJAX request only after user type in at least 3 characters
-                 limit: 10 // limit to show only 10 results
-             });
-         </script>
-
-     </div>
-        <button type="submit" class="btn btn-default">Submit</button>
- </form>
+<form role="form">
+    <div class="form-group">
+        <label for="name">Nome do torneio:</label>
+        <input type="text" class="form-control" id="name" placeholder="Nome do torneio">
+    </div>
+    <div class="form-group">
+        <label for="datetimepicker">Data de realização:</label>
+        <input type="text" class="form-control" id="datetimepicker" placeholder="Data de realização">
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker').datetimepicker({
+                format: 'L'
+            });
+        });
+    </script>
+    <div class="clearfix"></div>
+    <br><br>
+    <div class="form-group">
+        <label for="user-search">Adicionar Jogadores</label>
+        <input type="text" class="form-control" id="user-search" placeholder="Buscar jogador">
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#user-search').typeahead({
+                name: 'user-search',
+                remote: '/search_users.php?query=%QUERY',
+                minLength: 3, // send AJAX request only after user type in at least 3 characters
+                limit: 10 // limit to show only 10 results
+            });
+        });
+    </script>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
