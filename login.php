@@ -23,8 +23,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         /*** check for a result ***/
         $user_info = $stmt->fetch();
-        //$user_id = $stmt->fetchColumn();
-        //$role = $stmt->fetchColumn();
+        $user_id = $user_info['id'];
+        $role = $user_info['role'];
 
         /*** if we have no result then fail boat ***/
         if($user_info == false)
@@ -38,7 +38,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_id'] = $user_id;
             $_SESSION['role'] = $role;
 
-            $message = 'Permissao: '.var_dump($user_info);
+            $message = 'Permissao: '.$role. " Id: ".$user_id;
             
             //if($role == "organizador")
             //header("location:dashboard_organizer.php");
