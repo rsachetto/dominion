@@ -12,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     try
     {
         /*** prepare the select statement ***/
-        $stmt = $dbh->prepare("SELECT id, username, password, role FROM user WHERE username = :myusername AND password = :mypassword");
+        $stmt = $dbh->prepare("SELECT id, username, role FROM user WHERE username = :myusername AND password = :mypassword");
 
         /*** bind the parameters ***/
         $stmt->bindParam(':myusername', $myusername, PDO::PARAM_STR);
@@ -23,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         /*** check for a result ***/
         $user_id = $stmt->fetchColumn();
-        $role = $stmt->fetchColumn(3);
+        $role = $stmt->fetchColumn(2);
 
         /*** if we have no result then fail boat ***/
         if($user_id == false)
