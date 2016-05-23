@@ -31,9 +31,9 @@ else {
         }
         else
         {
-            if(role == "organizador")
+            if($role == "organizador")
                 header("location:dashboard_organizer.php");
-            elseif (role == "jogador")
+            elseif ($role == "jogador")
                 header("location:dashboard_player.php");
         }
     }

@@ -40,9 +40,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_id'] = $user_id;
             $_SESSION['role'] = $role;
 
-            if(role == "organizador")
+            if($role == "organizador")
                 header("location:dashboard_organizer.php");
-            elseif (role == "jogador")
+            elseif ($role == "jogador")
                 header("location:dashboard_player.php");
         }
 
