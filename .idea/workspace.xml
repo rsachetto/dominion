@@ -38,16 +38,26 @@
       <file leaf-file-name="login.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+            <state relative-caret-position="324">
+              <caret line="38" column="38" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1464034992397" expanded="true" signature="407:488" placeholder="SELECT id, u... user" />
-                <marker date="1464034992397" expanded="true" signature="407:498" placeholder="SELECT id, u... user" />
+                <marker date="1464035228011" expanded="true" signature="407:488" placeholder="SELECT id, u... user" />
+                <marker date="1464035228011" expanded="true" signature="407:498" placeholder="SELECT id, u... user" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PDO.php" pinned="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/PDO.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="1007" column="54" selection-start-line="1007" selection-start-column="54" selection-end-line="1007" selection-end-column="54" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -110,6 +120,9 @@
             <state relative-caret-position="-61">
               <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
               <folding>
+                <marker date="1464032102632" expanded="true" signature="259:324" placeholder="{...}" />
+                <marker date="1464032102632" expanded="true" signature="1230:2541" placeholder="{...}" />
+                <marker date="1464032102632" expanded="true" signature="1550:2137" placeholder="{...}" />
                 <marker date="1464032102632" expanded="true" signature="1626:1695" placeholder="INSERT INTO user... " />
               </folding>
             </state>
@@ -247,7 +260,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1464028604890</updated>
-      <workItem from="1464028607281" duration="6389000" />
+      <workItem from="1464028607281" duration="6621000" />
     </task>
     <task id="LOCAL-00001" summary="Configurações iniciais">
       <created>1464031035097</created>
@@ -382,11 +395,18 @@
       <option name="project" value="LOCAL" />
       <updated>1464034932429</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Configurações iniciais">
+      <created>1464034999962</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1464034999962</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6389000" />
+    <option name="totallyTimeSpent" value="6621000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -503,6 +523,9 @@
         <state relative-caret-position="-61">
           <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
           <folding>
+            <marker date="1464032102632" expanded="true" signature="259:324" placeholder="{...}" />
+            <marker date="1464032102632" expanded="true" signature="1230:2541" placeholder="{...}" />
+            <marker date="1464032102632" expanded="true" signature="1550:2137" placeholder="{...}" />
             <marker date="1464032102632" expanded="true" signature="1626:1695" placeholder="INSERT INTO user... " />
           </folding>
         </state>
@@ -544,23 +567,23 @@
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/PDO.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-504">
-          <caret line="1127" column="74" selection-start-line="1127" selection-start-column="74" selection-end-line="1127" selection-end-column="74" />
+        <state relative-caret-position="237">
+          <caret line="1007" column="54" selection-start-line="1007" selection-start-column="54" selection-end-line="1007" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+        <state relative-caret-position="324">
+          <caret line="38" column="38" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1464034992397" expanded="true" signature="407:488" placeholder="SELECT id, u... user" />
-            <marker date="1464034992397" expanded="true" signature="407:498" placeholder="SELECT id, u... user" />
+            <marker date="1464035228011" expanded="true" signature="407:488" placeholder="SELECT id, u... user" />
+            <marker date="1464035228011" expanded="true" signature="407:498" placeholder="SELECT id, u... user" />
           </folding>
         </state>
       </provider>

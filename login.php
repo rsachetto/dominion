@@ -22,11 +22,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute();
 
         /*** check for a result ***/
-        $user_id = $stmt->fetchColumn();
-        $role = $stmt->fetchColumn();
+        $user_info = $stmt->fetch();
+        //$user_id = $stmt->fetchColumn();
+        //$role = $stmt->fetchColumn();
 
         /*** if we have no result then fail boat ***/
-        if($user_id == false)
+        if($user_info == false)
         {
             $message = 'Login Failed';
         }
@@ -37,7 +38,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_id'] = $user_id;
             $_SESSION['role'] = $role;
 
-            $message = 'Permissao: '.$role. 'Id: '.$user_id;
+            $message = 'Permissao: '.var_dump($user_info);
             
             //if($role == "organizador")
             //header("location:dashboard_organizer.php");
