@@ -21,11 +21,13 @@ else {
         $stmt->execute();
 
         /*** check for a result ***/
-        $username = $stmt->fetchColumn();
-        $role = $stmt->fetchColumn(1);
+        $user_info = $stmt->fetch();
+        $username = $user_info['username'];
+        $role = $user_info['role'];
+
 
         /*** if we have no something is wrong ***/
-        if($username == false)
+        if($user_info == false)
         {
             header("location:login.php");
         }
