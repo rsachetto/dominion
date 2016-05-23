@@ -4,7 +4,7 @@ include('session.php');
 <html">
 
 <head>
-    <title>Welcome </title>
+    <title>Bem vindo jogador </title>
 </head>
 
 <body>

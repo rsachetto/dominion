@@ -40,7 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_id'] = $user_id;
             $_SESSION['role'] = $role;
 
-            header("location: dashboard.php");
+            header("location: dashboard_organizer.php");
         }
 
 
@@ -51,23 +51,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $message = 'We are unable to process your request. Please try again later"';
     }
 
-//    $sql = "SELECT id FROM admin WHERE username = '$myusername' and passcode = '$mypassword'";
-//    $result = mysqli_query($db,$sql);
-//    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-//    $active = $row['active'];
-//
-//    $count = mysqli_num_rows($result);
-//
-//    // If result matched $myusername and $mypassword, table row must be 1 row
-//
-//    if($count == 1) {
-//        session_register("myusername");
-//        $_SESSION['login_user'] = $myusername;
-//
-//        header("location: welcome.php");
-//    }else {
-//        $error = "Your Login Name or Password is invalid";
-//    }
 }
 ?>
 <html>
@@ -108,7 +91,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type = "submit" value = " Submit "/><br />
             </form>
 
-            <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
+            <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $message; ?></div>
 
         </div>
 
