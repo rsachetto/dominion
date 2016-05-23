@@ -37,6 +37,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             /*** set the session user_id variable ***/
             $_SESSION['user_id'] = $user_id;
             $_SESSION['role'] = $role;
+            $_SESSION['username'] = $myusername;
 
             //$message = 'Permissao: '.$role. " Id: ".$user_id;
             
