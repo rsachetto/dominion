@@ -7,7 +7,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     // username and password sent from form
 
     $myusername = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
-    $mypassword = sha1(filter_var($_POST['password'], FILTER_SANITIZE_STRING), PASSWORD_BCRYPT);
+    $mypassword = sha1(filter_var($_POST['password'], FILTER_SANITIZE_STRING));
 
     echo($mypassword);
     echo($myusername);
