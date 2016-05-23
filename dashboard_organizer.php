@@ -12,7 +12,9 @@ include('session.php');
 
     <script type="text/javascript">
         $(document).ready(function(){
-            $("#profile-content").load("add_championship_form.html");
+            $("#add-champ").click(function(event){
+                $("#profile-content").load("add_championship_form.html");
+            });
         });
     </script>
 
