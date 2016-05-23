@@ -14,5 +14,20 @@
              });
          });
      </script>
+     <div class="clearfix"></div>
+     <br><br>
+     <div class="form-group">
+         <label for="busca">Adicionar Jogadores</label>
+         <input type="text" class="form-control" id="user-search" placeholder="Buscar jogador">
+         <script type="text/javascript">
+             $('#user-search').typeahead({
+                 name: 'user-search',
+                 remote: '/search_users.php?query=%QUERY',
+                 minLength: 3, // send AJAX request only after user type in at least 3 characters
+                 limit: 10 // limit to show only 10 results
+             });
+         </script>
+
+     </div>
         <button type="submit" class="btn btn-default">Submit</button>
  </form>
