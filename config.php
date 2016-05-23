@@ -1,5 +1,5 @@
 <?php
-define('DB_SERVER', 'localhost:3036');
+define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'adminiFj7Raf');
 define('DB_PASSWORD', 'hXHhRdDKJyUj');
 define('DB_DATABASE', 'dominion');
