@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a813992e-1824-4434-a2c0-61d7b968686f" name="Default" comment="">
+    <list default="true" id="a813992e-1824-4434-a2c0-61d7b968686f" name="Default" comment="Configurações iniciais">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/add_championship_form.html" afterPath="$PROJECT_DIR$/add_championship_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/search_users.php" afterPath="$PROJECT_DIR$/search_users.php" />
     </list>
     <ignored path="dominion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,8 +66,8 @@
       <file leaf-file-name="add_championship_form.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/add_championship_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+            <state relative-caret-position="299">
+              <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -76,9 +77,9 @@
         <entry file="file://$PROJECT_DIR$/search_users.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
               <folding>
-                <marker date="1464044852322" expanded="true" signature="124:178" placeholder="SELECT usern... user" />
+                <marker date="1464046089781" expanded="true" signature="124:178" placeholder="SELECT usern... user" />
               </folding>
             </state>
           </provider>
@@ -105,9 +106,9 @@
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/dashboard_player.php" />
         <option value="$PROJECT_DIR$/player_sidebar.php" />
-        <option value="$PROJECT_DIR$/search_users.php" />
         <option value="$PROJECT_DIR$/organizer_sidebar.php" />
         <option value="$PROJECT_DIR$/dashboard_organizer.php" />
+        <option value="$PROJECT_DIR$/search_users.php" />
         <option value="$PROJECT_DIR$/add_championship_form.html" />
       </list>
     </option>
@@ -248,7 +249,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1464028604890</updated>
-      <workItem from="1464028607281" duration="17376000" />
+      <workItem from="1464028607281" duration="17583000" />
     </task>
     <task id="LOCAL-00001" summary="Configurações iniciais">
       <created>1464031035097</created>
@@ -565,11 +566,18 @@
       <option name="project" value="LOCAL" />
       <updated>1464045824186</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Configurações iniciais">
+      <created>1464045987159</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1464045987159</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17376000" />
+    <option name="totallyTimeSpent" value="17583000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -802,30 +810,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/search_users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+          <folding>
+            <marker date="1464046089781" expanded="true" signature="124:178" placeholder="SELECT usern... user" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/typeahead.bundle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="1963" column="20" selection-start-line="1963" selection-start-column="17" selection-end-line="1963" selection-end-column="20" />
+        <state relative-caret-position="156">
+          <caret line="910" column="12" selection-start-line="910" selection-start-column="12" selection-end-line="910" selection-end-column="12" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/search_users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding>
-            <marker date="1464044852322" expanded="true" signature="124:178" placeholder="SELECT usern... user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/add_championship_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="34" column="21" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+        <state relative-caret-position="299">
+          <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
           <folding />
         </state>
       </provider>

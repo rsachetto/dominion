@@ -32,13 +32,11 @@
             }
         });
 
-        alert(users);
-
+        users.initialize();
 
         $('#user-search').typeahead({
             name: 'user-search',
-            display: 'value',
-            source: users
+            source: users.ttAdapter()
         });
 
     </script>
