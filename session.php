@@ -25,7 +25,7 @@ else {
         $role = $stmt->fetchColumn(1);
 
         /*** if we have no something is wrong ***/
-        if(username == false)
+        if($username == false)
         {
             header("location:login.php");
         }
