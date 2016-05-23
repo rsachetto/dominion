@@ -9,9 +9,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $myusername = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
     $mypassword = sha1(filter_var($_POST['password'], FILTER_SANITIZE_STRING));
 
-    echo($mypassword);
-    echo($myusername);
-
     try
     {
         /*** prepare the select statement ***/
@@ -40,6 +37,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_id'] = $user_id;
             $_SESSION['role'] = $role;
 
+            error_log($role);
+            
             if($role == "organizador")
                 header("location:dashboard_organizer.php");
             elseif ($role == "jogador")
