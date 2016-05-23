@@ -6,7 +6,7 @@
                 Marcus Doe
             </div>
             <div class="profile-usertitle-job">
-                Developer
+                Organizador
             </div>
         </div>
         <!-- END SIDEBAR USER TITLE -->
@@ -17,6 +17,11 @@
                     <a href="#">
                         <i class="glyphicon glyphicon-home"></i>
                         Overview </a>
+                </li>
+                <li class="active">
+                    <a href="#" id="add-champ">
+                        <i class="glyphicon glyphicon-plus"></i>
+                        Criar novo campeonato </a>
                 </li>
                 <li>
                     <a href="#">
