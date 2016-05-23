@@ -38,12 +38,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_id'] = $user_id;
             $_SESSION['role'] = $role;
 
-            $message = 'Permissao: '.$role. " Id: ".$user_id;
+            //$message = 'Permissao: '.$role. " Id: ".$user_id;
             
-            //if($role == "organizador")
-            //header("location:dashboard_organizer.php");
-            //elseif ($role == "jogador")
-            //    header("location:dashboard_player.php");
+            if($role == "organizador")
+            header("location:dashboard_organizer.php");
+            elseif ($role == "jogador")
+                header("location:dashboard_player.php");
         }
 
 
