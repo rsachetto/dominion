@@ -29,13 +29,10 @@ else {
         {
             header("location:login.php");
         }
-        else
-        {
-            if($role == "organizador")
-                header("location:dashboard_organizer.php");
-            elseif ($role == "jogador")
-                header("location:dashboard_player.php");
+        else if($role != $_SESSION['role']) {
+            header("location:forbiden.php");
         }
+
     }
     catch (Exception $e)
     {
