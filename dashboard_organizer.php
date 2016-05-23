@@ -12,13 +12,13 @@ include('session.php');
 
     <script type="text/javascript">
         $(document).ready(function(){
-            $("add-champ").click(function(event){
+            $("#add-champ").click(function(event){
                 alert("Thanks for visiting!");
             });
         });
     </script>
 
-    <title>Bem vindo jogador </title>
+    <title>Bem vindo organizador </title>
 </head>
 
 <body>
