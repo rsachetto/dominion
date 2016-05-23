@@ -40,7 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $message= $role;
             
             //if($role == "organizador")
-            header("location:dashboard_organizer.php");
+            //header("location:dashboard_organizer.php");
             //elseif ($role == "jogador")
             //    header("location:dashboard_player.php");
         }
