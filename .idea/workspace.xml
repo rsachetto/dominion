@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a813992e-1824-4434-a2c0-61d7b968686f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/adduser_submit.php" afterPath="$PROJECT_DIR$/adduser_submit.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.php" afterPath="$PROJECT_DIR$/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/session.php" afterPath="$PROJECT_DIR$/session.php" />
     </list>
     <ignored path="dominion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,9 +46,9 @@
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1464031913496" expanded="true" signature="480:565" placeholder="SELECT id, u... user" />
-                <marker date="1464031913496" expanded="true" signature="480:575" placeholder="SELECT id, u... user" />
-                <marker date="1464031913496" expanded="true" signature="1591:1671" placeholder="SELECT id FR... admin" />
+                <marker date="1464032110255" expanded="true" signature="471:556" placeholder="SELECT id, u... user" />
+                <marker date="1464032110255" expanded="true" signature="471:566" placeholder="SELECT id, u... user" />
+                <marker date="1464032110255" expanded="true" signature="1582:1662" placeholder="SELECT id FR... admin" />
               </folding>
             </state>
           </provider>
@@ -90,7 +90,7 @@
         <entry file="file://$PROJECT_DIR$/add_user.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -99,10 +99,10 @@
       <file leaf-file-name="adduser_submit.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/adduser_submit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+            <state relative-caret-position="344">
+              <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
               <folding>
-                <marker date="1464030616402" expanded="true" signature="1652:1721" placeholder="INSERT INTO user... " />
+                <marker date="1464032102632" expanded="true" signature="1626:1695" placeholder="INSERT INTO user... " />
               </folding>
             </state>
           </provider>
@@ -120,9 +120,9 @@
         <option value="$PROJECT_DIR$/dashboard.php" />
         <option value="$PROJECT_DIR$/logout.php" />
         <option value="$PROJECT_DIR$/add_user.php" />
-        <option value="$PROJECT_DIR$/adduser_submit.php" />
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/session.php" />
+        <option value="$PROJECT_DIR$/adduser_submit.php" />
         <option value="$PROJECT_DIR$/login.php" />
       </list>
     </option>
@@ -247,7 +247,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1464028604890</updated>
-      <workItem from="1464028607281" duration="3307000" />
+      <workItem from="1464028607281" duration="3532000" />
     </task>
     <task id="LOCAL-00001" summary="Configurações iniciais">
       <created>1464031035097</created>
@@ -270,11 +270,18 @@
       <option name="project" value="LOCAL" />
       <updated>1464031562774</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Configurações iniciais">
+      <created>1464031918579</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1464031918579</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3307000" />
+    <option name="totallyTimeSpent" value="3532000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -378,28 +385,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adduser_submit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
-          <folding>
-            <marker date="1464030616402" expanded="true" signature="1652:1721" placeholder="INSERT INTO user... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="25" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/add_user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -422,6 +411,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/add_user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adduser_submit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="49" column="7" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="7" />
+          <folding>
+            <marker date="1464032102632" expanded="true" signature="1626:1695" placeholder="INSERT INTO user... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -431,9 +438,9 @@
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1464031913496" expanded="true" signature="480:565" placeholder="SELECT id, u... user" />
-            <marker date="1464031913496" expanded="true" signature="480:575" placeholder="SELECT id, u... user" />
-            <marker date="1464031913496" expanded="true" signature="1591:1671" placeholder="SELECT id FR... admin" />
+            <marker date="1464032110255" expanded="true" signature="471:556" placeholder="SELECT id, u... user" />
+            <marker date="1464032110255" expanded="true" signature="471:566" placeholder="SELECT id, u... user" />
+            <marker date="1464032110255" expanded="true" signature="1582:1662" placeholder="SELECT id FR... admin" />
           </folding>
         </state>
       </provider>

@@ -44,7 +44,7 @@ else
     $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
 
     /*** now we can encrypt the password ***/
-    $password =  password_hash( $password, PASSWORD_BCRYPT);
+    $password =  sha1( $password);
 
 
     try
