@@ -23,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         /*** check for a result ***/
         $user_id = $stmt->fetchColumn();
-        $role = $stmt->fetchColumn(2);
+        $role = $stmt->fetchColumn();
 
         /*** if we have no result then fail boat ***/
         if($user_id == false)
