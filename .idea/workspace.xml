@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a813992e-1824-4434-a2c0-61d7b968686f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/search_users.php" />
+    <list default="true" id="a813992e-1824-4434-a2c0-61d7b968686f" name="Default" comment="Configurações iniciais">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/add_championship_form.html" afterPath="$PROJECT_DIR$/add_championship_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_organizer.php" afterPath="$PROJECT_DIR$/dashboard_organizer.php" />
     </list>
     <ignored path="dominion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard_organizer.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dashboard_organizer.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboard_organizer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="65" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
+            <state relative-caret-position="270">
+              <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -63,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_championship_form.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="add_championship_form.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/add_championship_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+            <state relative-caret-position="195">
+              <caret line="13" column="95" selection-start-line="13" selection-start-column="95" selection-end-line="13" selection-end-column="95" />
               <folding />
             </state>
           </provider>
@@ -107,9 +107,9 @@
         <option value="$PROJECT_DIR$/dashboard_player.php" />
         <option value="$PROJECT_DIR$/player_sidebar.php" />
         <option value="$PROJECT_DIR$/organizer_sidebar.php" />
-        <option value="$PROJECT_DIR$/dashboard_organizer.php" />
         <option value="$PROJECT_DIR$/search_users.php" />
         <option value="$PROJECT_DIR$/add_championship_form.html" />
+        <option value="$PROJECT_DIR$/dashboard_organizer.php" />
       </list>
     </option>
   </component>
@@ -235,7 +235,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1464028604890</updated>
-      <workItem from="1464028607281" duration="16396000" />
+      <workItem from="1464028607281" duration="16594000" />
     </task>
     <task id="LOCAL-00001" summary="Configurações iniciais">
       <created>1464031035097</created>
@@ -510,11 +510,18 @@
       <option name="project" value="LOCAL" />
       <updated>1464042907469</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Configurações iniciais">
+      <created>1464045009777</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1464045009777</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16396000" />
+    <option name="totallyTimeSpent" value="16594000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -534,7 +541,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -705,14 +712,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard_organizer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="65" selection-start-line="22" selection-start-column="65" selection-end-line="22" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/bootstrap-datetimepicker.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -720,14 +719,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/organizer_sidebar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -758,8 +749,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/add_championship_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="24" column="58" selection-start-line="24" selection-start-column="58" selection-end-line="24" selection-end-column="58" />
+        <state relative-caret-position="195">
+          <caret line="13" column="95" selection-start-line="13" selection-start-column="95" selection-end-line="13" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organizer_sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard_organizer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
           <folding />
         </state>
       </provider>

@@ -16,12 +16,26 @@ include('session.php');
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/locale/pt-br.js"></script>
 
     <script src="js/bootstrap-datetimepicker.min.js"></script>
+    <script src="js/typeahead.bundle.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function(){
             $("#add-champ").click(function(event){
                 $("#content").load("add_championship_form.html");
             });
+
+
+            $('#datetimepicker').datetimepicker({
+                format: 'L'
+            });
+
+            $('#user-search').typeahead({
+                name: 'user-search',
+                remote: '/search_users.php?query=%QUERY',
+                minLength: 3, // send AJAX request only after user type in at least 3 characters
+                limit: 10 // limit to show only 10 results
+            });
+
         });
     </script>
 
