@@ -18,7 +18,7 @@
                         <i class="glyphicon glyphicon-home"></i>
                         Overview </a>
                 </li>
-                <li class="active">
+                <li>
                     <a href="#" id="add-champ">
                         <i class="glyphicon glyphicon-plus"></i>
                         Criar novo campeonato </a>

@@ -13,7 +13,7 @@ include('session.php');
     <script type="text/javascript">
         $(document).ready(function(){
             $("#add-champ").click(function(event){
-                $("#profile-content").load("add_championship_form.html");
+                $("#content").load("add_championship_form.html");
             });
         });
     </script>
@@ -29,7 +29,7 @@ include('session.php');
         include('organizer_sidebar.php');
         ?>
         <div class="col-md-9">
-            <div class="profile-content">
+            <div class="profile-content" id="content">
                 Some user related content goes here...
             </div>
         </div>
