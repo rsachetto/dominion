@@ -1,7 +1,7 @@
 <?php
 include('session.php');
 ?>
-<html">
+<html>
 
 <head>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -22,18 +22,6 @@ include('session.php');
         $(document).ready(function(){
             $("#add-champ").click(function(event){
                 $("#content").load("add_championship_form.html");
-            });
-
-
-            $('#datetimepicker').datetimepicker({
-                format: 'L'
-            });
-
-            $('#user-search').typeahead({
-                name: 'user-search',
-                remote: '/search_users.php?query=%QUERY',
-                minLength: 3, // send AJAX request only after user type in at least 3 characters
-                limit: 10 // limit to show only 10 results
             });
 
         });
