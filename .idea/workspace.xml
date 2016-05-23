@@ -65,8 +65,8 @@
       <file leaf-file-name="add_championship_form.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/add_championship_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+            <state relative-caret-position="238">
+              <caret line="55" column="39" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -249,14 +249,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1464028604890</updated>
-      <workItem from="1464028607281" duration="19021000" />
-    </task>
-    <task id="LOCAL-00004" summary="Configurações iniciais">
-      <created>1464031918579</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1464031918579</updated>
+      <workItem from="1464028607281" duration="19146000" />
     </task>
     <task id="LOCAL-00005" summary="Configurações iniciais">
       <created>1464032142469</created>
@@ -594,11 +587,18 @@
       <option name="project" value="LOCAL" />
       <updated>1464047449909</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Configurações iniciais">
+      <created>1464047633805</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1464047633805</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19021000" />
+    <option name="totallyTimeSpent" value="19146000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -853,8 +853,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/add_championship_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+        <state relative-caret-position="238">
+          <caret line="55" column="39" selection-start-line="55" selection-start-column="39" selection-end-line="55" selection-end-column="39" />
           <folding />
         </state>
       </provider>
