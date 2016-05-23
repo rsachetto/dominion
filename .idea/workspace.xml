@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a813992e-1824-4434-a2c0-61d7b968686f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/search_players.php" afterPath="$PROJECT_DIR$/search_players.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/add_championship_form.html" afterPath="$PROJECT_DIR$/add_championship_form.html" />
     </list>
     <ignored path="dominion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,17 +62,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_championship_form.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="add_championship_form.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/add_championship_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+            <state relative-caret-position="163">
+              <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search_players.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="search_players.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/search_players.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -108,8 +108,8 @@
         <option value="$PROJECT_DIR$/organizer_sidebar.php" />
         <option value="$PROJECT_DIR$/search_users.php" />
         <option value="$PROJECT_DIR$/dashboard_organizer.php" />
-        <option value="$PROJECT_DIR$/add_championship_form.html" />
         <option value="$PROJECT_DIR$/search_players.php" />
+        <option value="$PROJECT_DIR$/add_championship_form.html" />
       </list>
     </option>
   </component>
@@ -249,14 +249,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1464028604890</updated>
-      <workItem from="1464028607281" duration="18837000" />
-    </task>
-    <task id="LOCAL-00003" summary="Configurações iniciais">
-      <created>1464031562774</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1464031562774</updated>
+      <workItem from="1464028607281" duration="19021000" />
     </task>
     <task id="LOCAL-00004" summary="Configurações iniciais">
       <created>1464031918579</created>
@@ -594,11 +587,18 @@
       <option name="project" value="LOCAL" />
       <updated>1464047304470</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Configurações iniciais">
+      <created>1464047449908</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1464047449909</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18837000" />
+    <option name="totallyTimeSpent" value="19021000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -841,14 +841,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/add_championship_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="45" column="34" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/search_players.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -856,6 +848,14 @@
           <folding>
             <marker date="1464047443521" expanded="true" signature="120:172" placeholder="SELECT usern... user" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/add_championship_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
