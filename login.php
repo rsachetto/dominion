@@ -9,6 +9,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $myusername = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
     $mypassword = password_hash(filter_var($_POST['password'], FILTER_SANITIZE_STRING), PASSWORD_BCRYPT);
 
+    echo($mypassword);
+    echo($myusername);
 
     try
     {
