@@ -17,6 +17,11 @@ include('session.php');
 <?php
 include('player_sidebar.php');
 ?>
+<div class="col-md-9">
+    <div class="profile-content">
+        Some user related content goes here...
+    </div>
+</div>
 <!--<h1>Welcome --><?php //echo $_SESSION['username']; ?><!--</h1>-->
 <!--<h2><a href = "logout.php">Sign Out</a></h2>-->
 </body>

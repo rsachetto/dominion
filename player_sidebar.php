@@ -51,15 +51,5 @@
                 <!-- END MENU -->
             </div>
         </div>
-        <div class="col-md-9">
-            <div class="profile-content">
-                Some user related content goes here...
-            </div>
-        </div>
     </div>
 </div>
-<center>
-    <strong>Powered by <a href="http://j.mp/metronictheme" target="_blank">KeenThemes</a></strong>
-</center>
-<br>
-<br>
