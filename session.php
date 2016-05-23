@@ -31,6 +31,7 @@ else {
         {
             header("location:login.php");
         }
+        //TODO: temos que verificar as permissoes aqui
         else if($role != $_SESSION['role']) {
             header("location:forbiden.php");
         }
