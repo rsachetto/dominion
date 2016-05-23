@@ -21,24 +21,13 @@
         <input type="text" class="form-control" id="user-search" placeholder="Buscar jogador">
     </div>
     <script type="text/javascript">
-        var users = new Bloodhound({
-            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
-            queryTokenizer: Bloodhound.tokenizers.whitespace,
+        $("#user-search").typeahead({
+            name : 'search',
             remote: {
-                url: '/search_users.php?query=%QUERY',
-                wildcard: '%QUERY',
-                minLength: 3, // send AJAX request only after user type in at least 3 characters
-                limit: 10 // limit to show only 10 results
+                url : '/search_users.php?query=%QUERY'
             }
+
         });
-
-        users.initialize();
-
-        $('#user-search').typeahead({
-            name: 'user-search',
-            source: users.ttAdapter()
-        });
-
     </script>
     <button type="submit" class="btn btn-default">Submit</button>
 </form>
