@@ -21,13 +21,55 @@
         <input type="text" class="form-control" id="user-search" placeholder="Buscar jogador">
     </div>
     <script type="text/javascript">
-        $("#user-search").typeahead({
-            name : 'search',
-            remote: {
-                url : '/search_users.php?query=%QUERY'
-            }
 
+        //Set up "Bloodhound" Options
+        var my_Suggestion_class = new Bloodhound({
+            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('vval'),
+            queryTokenizer: Bloodhound.tokenizers.whitespace,
+            remote: {
+                url: "search_players.php?s=%QUERY",
+                filter: function(x) {
+                    return $.map(x, function(item) {
+                        return {vval: item.username};
+                    });
+                },
+                wildcard: "%QUERY"
+            }
+            //http://code.educationgovt.com/typeaheadjs/countries.json
         });
+
+
+
+        // Initialize Typeahead with Parameters
+        my_Suggestion_class.initialize();
+        var typeahead_elem = $('#user-search');
+        typeahead_elem.typeahead({
+                    hint: false,
+                    highlight: true,
+                    minLength: 1
+                },
+                {
+                    // `ttAdapter` wraps the suggestion engine in an adapter that
+                    // is compatible with the typeahead jQuery plugin
+                    name: 'vval',
+                    displayKey: 'vval',
+                    source: my_Suggestion_class.ttAdapter()
+                });
+
+        //Get the Typeahead Value on Following Events
+        $('input').on([
+            'typeahead:initialized',
+            'typeahead:initialized:err',
+            'typeahead:selected',
+            'typeahead:autocompleted',
+            'typeahead:cursorchanged',
+            'typeahead:opened',
+            'typeahead:closed'
+        ].join(' '), function(x) {
+            //console.log(this.value);
+        });
+
+
     </script>
     <button type="submit" class="btn btn-default">Submit</button>
 </form>

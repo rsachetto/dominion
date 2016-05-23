@@ -17,6 +17,7 @@ include('session.php');
 
     <script src="js/bootstrap-datetimepicker.min.js"></script>
     <script src="js/typeahead.bundle.js"></script>
+    <script src="js/bloodhound.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function(){
