@@ -17,17 +17,17 @@
     <div class="clearfix"></div>
     <br><br>
     <div class="form-group" id="remote">
-        <label for="user-search">Adicionar Jogadores</label>
-        <input type="text" id="user-search" class="form-control" data-provide="typeahead" autocomplete="off">
+        <label for="typeahead-input">Adicionar Jogadores</label>
+        <input type="text" id="typeahead-input" data-provide="typeahead" autocomplete="off">
     </div>
 
     <script type="text/javascript">
         jQuery(document).ready(function() {
-            $('#user-search').typeahead({
+            $('#typeahead-input').typeahead({
                 source: function (query, process) {
 
                     return $.get('/search_players.php?s=' + query, function (data) {
-                        console.log(data);
+                        console.info(data);
                         return process(data);
                     });
                 }
