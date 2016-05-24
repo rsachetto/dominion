@@ -22,9 +22,16 @@
     </div>
 
     <script type="text/javascript">
+
+        var countries = [
+            { value: 'Andorra', data: 'AD' },
+            { value: 'Zimbabwe', data: 'ZZ' }
+        ];
+
         jQuery(document).ready(function() {
             $('#typeahead-input').autocomplete({
-                serviceUrl: '/search_players.php',
+                //serviceUrl: '/search_players.php',
+                lookup: countries,
                 onSelect: function (suggestion) {
                     alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
                 }

@@ -86,7 +86,6 @@
                 },
                 paramName: 'query',
                 transformResult: function (response) {
-                    console.log(response);
                     return typeof response === 'string' ? $.parseJSON(response) : response;
                 },
                 showNoSuggestionNotice: false,
