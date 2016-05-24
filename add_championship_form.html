@@ -24,7 +24,7 @@
     <script type="text/javascript">
         jQuery(document).ready(function() {
             $('#typeahead-input').autocomplete({
-                serviceUrl: '/search_players.php?s='+query,
+                serviceUrl: '/search_players.php,
                 onSelect: function (suggestion) {
                     alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
                 }
