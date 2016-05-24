@@ -13,5 +13,6 @@ foreach ($stmt->fetchAll(PDO::FETCH_COLUMN) as $row) {
     $results[] = $row;
 }
 
+error_log("TESTE");
 // and return to typeahead
 return json_encode($results);
