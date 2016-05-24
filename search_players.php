@@ -10,7 +10,7 @@ $stmt->execute();
 // populate results
 $results = array();
 foreach ($stmt->fetchAll(PDO::FETCH_COLUMN) as $row) {
-    $results['username'] = $row;
+    $results[] = $row;
 }
 //$results=$stmt->fetchAll(PDO::FETCH_ASSOC);
 
