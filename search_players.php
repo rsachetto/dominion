@@ -13,7 +13,13 @@ $stmt->execute();
 //    $results['username'] = $row;
 //}
 $results=$stmt->fetchAll(PDO::FETCH_ASSOC);
-$json=json_encode($results);
-error_log($json);
+
 // and return to typeahead
+
+$results_j["query"] = "Unity";
+$results_j["suggestions"] = $results;
+
+$json=json_encode($results_j);
+error_log($json);
+
 return $json;
