@@ -24,9 +24,11 @@
     <script type="text/javascript">
         jQuery(document).ready(function() {
             $('#typeahead-input').typeahead({
-                source: function (query) {
-                    return $.get('/search_players.php?s=' + query);
-                }
+                name: 'my_search',
+                remote: '/search_players.php?s=%QUERY'
+//                source: function (query) {
+//                    return $.get('/search_players.php?s=' + query);
+//                }
             });
         })
     </script>
