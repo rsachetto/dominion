@@ -23,12 +23,11 @@
 
     <script type="text/javascript">
         jQuery(document).ready(function() {
-            $('#typeahead-input').typeahead({
-                name: 'my_search',
-                remote: '/search_players.php?s=%QUERY'
-//                source: function (query) {
-//                    return $.get('/search_players.php?s=' + query);
-//                }
+            $('#typeahead-input').autocomplete({
+                serviceUrl: '/search_players.php?s='+query,
+                onSelect: function (suggestion) {
+                    alert('You selected: ' + suggestion.value + ', ' + suggestion.data);
+                }
             });
         })
     </script>

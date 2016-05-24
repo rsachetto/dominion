@@ -16,8 +16,8 @@ include('session.php');
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/locale/pt-br.js"></script>
 
     <script src="js/bootstrap-datetimepicker.min.js"></script>
-    <script src="js/bloodhound.js"></script>
-    <script src="js/bootstrap3-typeahead.min.js"></script>
+    <script src="js/jquery.autocomplete.js"></script>
+
 
     <script type="text/javascript">
         $(document).ready(function(){
