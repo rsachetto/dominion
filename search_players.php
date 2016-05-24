@@ -1,6 +1,6 @@
 <?php
 include("config.php");
-$query = $_GET['s'].'%'; // add % for LIKE query later
+$query = $_GET['query'].'%'; // add % for LIKE query later
 
 // do query
 $stmt = $dbh->prepare('SELECT username FROM user WHERE username LIKE :query');
