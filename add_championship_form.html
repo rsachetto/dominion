@@ -22,14 +22,29 @@
     </div>
 
     <script type="text/javascript">
+//        jQuery(document).ready(function() {
+//            $('#typeahead-input').autocomplete({
+//                serviceUrl: '/search_players.php',
+//                onSelect: function (suggestion) {
+//                    alert('You selected: ' + suggestion.username);
+//                }
+//            });
+//        })
+
+<input id="typeahead-input" type="text" data-provide="typeahead" />
+
+        <script type="text/javascript">
         jQuery(document).ready(function() {
-            $('#typeahead-input').autocomplete({
-                serviceUrl: '/search_players.php',
-                onSelect: function (suggestion) {
-                    alert('You selected: ' + suggestion.username);
+            $('#typeahead-input').typeahead({
+                source: function (query, process) {
+                    return $.get('/search_players?query=' + query, function (data) {
+                        return process(data.search_results);
+                    });
                 }
             });
         })
+    </script>
+
     </script>
     <button type="submit" class="btn btn-default">Submit</button>
 </form>
