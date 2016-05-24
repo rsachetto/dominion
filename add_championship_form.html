@@ -27,7 +27,7 @@
                 source: function (query, process) {
 
                     return $.get('/search_players.php?s=' + query, function (data) {
-                        console.info(data);
+                        console.info(process(data));
                         return process(data);
                     });
                 }
