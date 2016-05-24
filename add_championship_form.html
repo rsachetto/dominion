@@ -25,7 +25,9 @@
         jQuery(document).ready(function() {
             $('#user-search').typeahead({
                 source: function (query, process) {
+
                     return $.get('/search_players.php?s=' + query, function (data) {
+                        console.log(data);
                         return process(data);
                     });
                 }
