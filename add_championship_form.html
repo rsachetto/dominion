@@ -18,32 +18,19 @@
     <br><br>
     <div class="form-group" id="remote">
         <label for="user-search">Adicionar Jogadores</label>
-        <input type="text" data-provide="typeahead" autocomplete="off">
+        <input type="text" id="user-search" data-provide="typeahead" autocomplete="off">
     </div>
+
     <script type="text/javascript">
-
-        var players = new Bloodhound({
-            datumTokenizer: Bloodhound.tokenizers.whitespace,
-            queryTokenizer: Bloodhound.tokenizers.whitespace,
-            local:  ["(A)labama","Alaska","Arizona","Arkansas","Arkansas2","Barkansas"]
-        });
-
-//        var players = new Bloodhound({
-//            datumTokenizer: Bloodhound.tokenizers.whitespace,
-//            queryTokenizer: Bloodhound.tokenizers.whitespace,
-//            remote: {
-//                url: '/search_players?s=%QUERY',
-//                wildcard: '%QUERY'
-//            }
-//        });
-
-        players.initialize();
-        $('.typeahead').typeahead(
-                {
-                    items: 4,
-                    source:players.ttAdapter()
-                });
-
+        jQuery(document).ready(function() {
+            $('#user-search').typeahead({
+                source: function (query, process) {
+                    return $.get('/search_player.php?s=' + query, function (data) {
+                        return process(data.search_results);
+                    });
+                }
+            });
+        })
     </script>
     <button type="submit" class="btn btn-default">Submit</button>
 </form>
