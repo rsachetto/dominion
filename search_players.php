@@ -16,4 +16,4 @@ $results=$stmt->fetchAll(PDO::FETCH_ASSOC);
 $json=json_encode($results);
 error_log($json);
 // and return to typeahead
-return json_encode($json);
+return $json;
