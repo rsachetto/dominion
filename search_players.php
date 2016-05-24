@@ -15,4 +15,4 @@ foreach ($stmt->fetchAll(PDO::FETCH_COLUMN) as $row) {
 
 error_log(json_encode($results));
 // and return to typeahead
-return json_encode($results);
+echo(json_encode($results));
