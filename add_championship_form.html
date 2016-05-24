@@ -25,11 +25,17 @@
         var players = new Bloodhound({
             datumTokenizer: Bloodhound.tokenizers.whitespace,
             queryTokenizer: Bloodhound.tokenizers.whitespace,
-            remote: {
-                url: '/search_players?s=%QUERY',
-                wildcard: '%QUERY'
-            }
+            local:  ["(A)labama","Alaska","Arizona","Arkansas","Arkansas2","Barkansas"]
         });
+
+//        var players = new Bloodhound({
+//            datumTokenizer: Bloodhound.tokenizers.whitespace,
+//            queryTokenizer: Bloodhound.tokenizers.whitespace,
+//            remote: {
+//                url: '/search_players?s=%QUERY',
+//                wildcard: '%QUERY'
+//            }
+//        });
 
         players.initialize();
         $('.typeahead').typeahead(
