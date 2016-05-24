@@ -25,6 +25,14 @@
         jQuery(document).ready(function() {
             $('#typeahead-input').autocomplete({
                 serviceUrl: '/search_players.php',
+                transformResult: function(response) {
+                    console.log(response);
+                    return {
+                        suggestions: $.map(response, function(dataItem) {
+                            return { value: dataItem.username, data: '' };
+                        })
+                    };
+                },
                 onSelect: function (suggestion) {
                     alert('You selected: ' + suggestion.username);
                 }
