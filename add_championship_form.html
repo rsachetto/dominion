@@ -37,7 +37,11 @@
                     return $.get('/search_players.php?query=' + query, function (data) {
                         return process(data.suggestions);
                     });
+                },
+                afterSelect	: function (suggestion) {
+                    alert('You selected: ' + suggestion);
                 }
+
             });
         })
     </script>
