@@ -37,31 +37,17 @@
         // Initialize Typeahead with Parameters
         my_Suggestion_class.initialize();
 
-        console.log(my_Suggestion_class.ttAdapter());
+//        $("#user-search").typeahead({
+//                    hint: false,
+//                    highlight: true,
+//                    minLength: 1
+//                },
+//                {
+//                    // `ttAdapter` wraps the suggestion engine in an adapter that
+//                    // is compatible with the typeahead jQuery plugin
+//                    source: my_Suggestion_class
+//                });
 
-        $("#user-search").typeahead({
-                    hint: false,
-                    highlight: true,
-                    minLength: 1
-                },
-                {
-                    // `ttAdapter` wraps the suggestion engine in an adapter that
-                    // is compatible with the typeahead jQuery plugin
-                    source: my_Suggestion_class
-                });
-
-        //Get the Typeahead Value on Following Events
-        $('input').on([
-            'typeahead:initialized',
-            'typeahead:initialized:err',
-            'typeahead:selected',
-            'typeahead:autocompleted',
-            'typeahead:cursorchanged',
-            'typeahead:opened',
-            'typeahead:closed'
-        ].join(' '), function(x) {
-            console.log(this.value);
-        });
 
 
     </script>
