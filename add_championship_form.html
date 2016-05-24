@@ -16,9 +16,9 @@
     </script>
     <div class="clearfix"></div>
     <br><br>
-    <div class="form-group">
+    <div class="form-group" id="remote">
         <label for="user-search">Adicionar Jogadores</label>
-        <input type="text" class="form-control" id="user-search" placeholder="Buscar jogador">
+        <input class="typeahead" id='user-search' type="text" placeholder="Buscar Jogador">
     </div>
     <script type="text/javascript">
 
@@ -36,6 +36,11 @@
 
         // Initialize Typeahead with Parameters
         my_Suggestion_class.initialize();
+
+        $('#remote .typeahead').typeahead(null, {
+            name: 'players',
+            source: my_Suggestion_class
+        });
 
 //        $("#user-search").typeahead({
 //                    hint: false,
