@@ -28,8 +28,8 @@
                 transformResult: function(response) {
                     console.log(response);
                     return {
-                        suggestions: $.map(response, function(dataItem) {
-                            return { value: dataItem.username, data: '' };
+                        suggestions: $.map(response.suggestions, function(dataItem) {
+                            return { value: dataItem };
                         })
                     };
                 },
