@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a813992e-1824-4434-a2c0-61d7b968686f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/search_players.php" afterPath="$PROJECT_DIR$/search_players.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/add_championship_form.html" afterPath="$PROJECT_DIR$/add_championship_form.html" />
     </list>
     <ignored path="dominion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,35 +62,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_championship_form.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="add_championship_form.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/add_championship_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+            <state relative-caret-position="280">
+              <caret line="30" column="70" selection-start-line="30" selection-start-column="70" selection-end-line="30" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search_players.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="search_players.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/search_players.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
               <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
               <folding>
                 <marker date="1464054494292" expanded="true" signature="124:176" placeholder="SELECT usern... user" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery.autocomplete.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/jquery.autocomplete.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="76" column="37" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="37" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,8 +109,8 @@
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/dashboard_organizer.php" />
         <option value="$PROJECT_DIR$/js/jquery.autocomplete.js" />
-        <option value="$PROJECT_DIR$/add_championship_form.html" />
         <option value="$PROJECT_DIR$/search_players.php" />
+        <option value="$PROJECT_DIR$/add_championship_form.html" />
       </list>
     </option>
   </component>
@@ -262,14 +250,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1464028604890</updated>
-      <workItem from="1464028607281" duration="25885000" />
-    </task>
-    <task id="LOCAL-00044" summary="Configurações iniciais">
-      <created>1464045555139</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1464045555139</updated>
+      <workItem from="1464028607281" duration="26218000" />
     </task>
     <task id="LOCAL-00045" summary="Configurações iniciais">
       <created>1464045824186</created>
@@ -607,11 +588,18 @@
       <option name="project" value="LOCAL" />
       <updated>1464054400068</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Configurações iniciais">
+      <created>1464054498328</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1464054498329</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25885000" />
+    <option name="totallyTimeSpent" value="26218000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -880,14 +868,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/add_championship_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/search_players.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -895,6 +875,14 @@
           <folding>
             <marker date="1464054494292" expanded="true" signature="124:176" placeholder="SELECT usern... user" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/add_championship_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="30" column="70" selection-start-line="30" selection-start-column="70" selection-end-line="30" selection-end-column="70" />
+          <folding />
         </state>
       </provider>
     </entry>
