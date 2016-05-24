@@ -21,5 +21,6 @@ $results_j["suggestions"] = $results;
 
 $json=json_encode($results_j);
 error_log($json);
-
-return $json;
+header('Content-Type: application/json');
+echo $json;
+php?>
