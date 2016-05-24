@@ -24,16 +24,10 @@
 
         //Set up "Bloodhound" Options
         my_Suggestion_class = new Bloodhound({
-            datumTokenizer: Bloodhound.tokenizers.obj.whitespace('vval'),
+            datumTokenizer: Bloodhound.tokenizers.whitespace,
             queryTokenizer: Bloodhound.tokenizers.whitespace,
             remote: {
                 url: "search_players.php?s=%QUERY",
-                filter: function(x) {
-                    return $.map(x, function(item) {
-                        console.log(item);
-                        return {vval: item.username};
-                    });
-                },
                 wildcard: "%QUERY"
             }
             //http://code.educationgovt.com/typeaheadjs/countries.json
@@ -53,8 +47,6 @@
                 {
                     // `ttAdapter` wraps the suggestion engine in an adapter that
                     // is compatible with the typeahead jQuery plugin
-                    name: 'vval',
-                    displayKey: 'vval',
                     source: my_Suggestion_class.ttAdapter()
                 });
 
