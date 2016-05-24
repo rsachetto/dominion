@@ -8,11 +8,12 @@ $stmt->bindParam(':query', $query, PDO::PARAM_STR);
 $stmt->execute();
 
 // populate results
-$results = array();
-foreach ($stmt->fetchAll(PDO::FETCH_COLUMN) as $row) {
-    $results['username'] = $row;
-}
-
-error_log(json_encode($results));
+//$results = array();
+//foreach ($stmt->fetchAll(PDO::FETCH_COLUMN) as $row) {
+//    $results['username'] = $row;
+//}
+$results=$statement->fetchAll(PDO::FETCH_ASSOC);
+$json=json_encode($results);
+error_log($json);
 // and return to typeahead
-return json_encode($results);
+return json_encode($json);
