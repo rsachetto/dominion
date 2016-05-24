@@ -24,11 +24,8 @@
     <script type="text/javascript">
         jQuery(document).ready(function() {
             $('#typeahead-input').typeahead({
-                source: function (query, process) {
-                    return $.get('/search_players.php?s=' + query, function (data) {
-                        console.info(data);
-                        return process(data);
-                    });
+                source: function (query) {
+                    return $.get('/search_players.php?s=' + query);
                 }
             });
         })
