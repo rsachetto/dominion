@@ -18,7 +18,7 @@
     <br><br>
     <div class="form-group" id="remote">
         <label for="user-search">Adicionar Jogadores</label>
-        <input class="typeahead" id='user-search' type="text" placeholder="Buscar Jogador">
+        <input class="twitter-typeahead" id='user-search' type="text" placeholder="Buscar Jogador">
     </div>
     <script type="text/javascript">
 
@@ -37,7 +37,7 @@
         // Initialize Typeahead with Parameters
         my_Suggestion_class.initialize();
 
-        $('#remote .typeahead').typeahead(null, {
+        $('#remote .twitter-typeahead').typeahead(null, {
             name: 'players',
             source: my_Suggestion_class
         });
