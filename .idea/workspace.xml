@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a813992e-1824-4434-a2c0-61d7b968686f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/add_championship_form.html" afterPath="$PROJECT_DIR$/add_championship_form.html" />
     </list>
     <ignored path="dominion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -66,7 +65,7 @@
         <entry file="file://$PROJECT_DIR$/add_championship_form.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+              <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -237,14 +236,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1464028604890</updated>
-      <workItem from="1464028607281" duration="23359000" />
-    </task>
-    <task id="LOCAL-00030" summary="Configurações iniciais">
-      <created>1464037708250</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1464037708250</updated>
+      <workItem from="1464028607281" duration="23608000" />
     </task>
     <task id="LOCAL-00031" summary="Configurações iniciais">
       <created>1464038502785</created>
@@ -582,11 +574,18 @@
       <option name="project" value="LOCAL" />
       <updated>1464051733516</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="Configurações iniciais">
+      <created>1464051971754</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1464051971754</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23359000" />
+    <option name="totallyTimeSpent" value="23608000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -858,7 +857,7 @@
     <entry file="file://$PROJECT_DIR$/add_championship_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
           <folding />
         </state>
       </provider>
