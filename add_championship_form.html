@@ -34,7 +34,7 @@
         jQuery(document).ready(function() {
             $('#typeahead-input').typeahead({
                 source: function (query, process) {
-                    return $.get('/search_players?query=' + query, function (data) {
+                    return $.get('/search_players.php?query=' + query, function (data) {
                         return process(data.suggestions);
                     });
                 }
