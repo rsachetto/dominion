@@ -31,14 +31,12 @@
 //            });
 //        })
 
-<input id="typeahead-input" type="text" data-provide="typeahead" />
-
         <script type="text/javascript">
         jQuery(document).ready(function() {
             $('#typeahead-input').typeahead({
                 source: function (query, process) {
                     return $.get('/search_players?query=' + query, function (data) {
-                        return process(data.search_results);
+                        return process(data.suggestions);
                     });
                 }
             });

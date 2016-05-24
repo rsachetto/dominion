@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a813992e-1824-4434-a2c0-61d7b968686f" name="Default" comment="">
+    <list default="true" id="a813992e-1824-4434-a2c0-61d7b968686f" name="Default" comment="Configurações iniciais">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/add_championship_form.html" afterPath="$PROJECT_DIR$/add_championship_form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dashboard_organizer.php" afterPath="$PROJECT_DIR$/dashboard_organizer.php" />
     </list>
     <ignored path="dominion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,7 +42,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard_organizer.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dashboard_organizer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard_organizer.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
@@ -63,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_championship_form.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="add_championship_form.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/add_championship_form.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="39" column="55" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
+            <state relative-caret-position="205">
+              <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -110,8 +109,8 @@
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/js/jquery.autocomplete.js" />
         <option value="$PROJECT_DIR$/search_players.php" />
-        <option value="$PROJECT_DIR$/add_championship_form.html" />
         <option value="$PROJECT_DIR$/dashboard_organizer.php" />
+        <option value="$PROJECT_DIR$/add_championship_form.html" />
       </list>
     </option>
   </component>
@@ -251,14 +250,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1464028604890</updated>
-      <workItem from="1464028607281" duration="27475000" />
-    </task>
-    <task id="LOCAL-00056" summary="Configurações iniciais">
-      <created>1464047997734</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1464047997734</updated>
+      <workItem from="1464028607281" duration="27536000" />
     </task>
     <task id="LOCAL-00057" summary="Configurações iniciais">
       <created>1464048181071</created>
@@ -596,11 +588,18 @@
       <option name="project" value="LOCAL" />
       <updated>1464055873919</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="Configurações iniciais">
+      <created>1464056090165</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1464056090165</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27475000" />
+    <option name="totallyTimeSpent" value="27536000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -871,18 +870,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/add_championship_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="39" column="55" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard_organizer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/add_championship_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
           <folding />
         </state>
       </provider>
