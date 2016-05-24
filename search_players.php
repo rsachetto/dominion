@@ -12,7 +12,7 @@ $stmt->execute();
 //foreach ($stmt->fetchAll(PDO::FETCH_COLUMN) as $row) {
 //    $results['username'] = $row;
 //}
-$results=$statement->fetchAll(PDO::FETCH_ASSOC);
+$results=$stmt->fetchAll(PDO::FETCH_ASSOC);
 $json=json_encode($results);
 error_log($json);
 // and return to typeahead
