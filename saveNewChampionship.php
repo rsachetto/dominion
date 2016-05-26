@@ -7,7 +7,8 @@ error_log($players);
 
 // Decode the JSON array
 $players = json_decode($players,TRUE);
-error_log($players);
-
+if($players == NULL) {
+    error_log("NULLLLL" + json_last_error_msg());
+}
 // now $tableData can be accessed like a PHP array
 
