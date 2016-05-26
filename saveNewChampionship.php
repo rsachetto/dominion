@@ -1,17 +1,28 @@
 <?php
+include("config.php");
 
 // Unescape the string values in the JSON array
 $players = stripcslashes($_POST['players']);
-error_log($players);
-
 
 // Decode the JSON array
 $players = json_decode($players,TRUE);
-if($players == NULL) {
-    error_log("NULLLLL" + json_last_error_msg());
-}
-else {
-    error_log($players[0]['userId']);
-}
-// now $tableData can be accessed like a PHP array
+
+$cName = stripcslashes($_POST['cName']);
+$cDate = stripcslashes($_POST['cDate']);
+$ownerId = stripcslashes($_POST['ownerId']);
+
+
+/*** prepare the insert ***/
+$stmt = $dbh->prepare("INSERT INTO tournament (name, date, user_id ) VALUES (:name, :date, :user_id )");
+
+/*** bind the parameters ***/
+$stmt->bindParam(':name', $cName, PDO::PARAM_STR);
+$stmt->bindParam(':date', $cDate, PDO::PARAM_STR);
+$stmt->bindParam(':user_id', $ownerId, PDO::PARAM_INT);
+
+
+/*** execute the prepared statement ***/
+$stmt->execute();
+
+
 

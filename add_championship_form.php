@@ -85,7 +85,7 @@
                 $.ajax({
                     type: "POST",
                     url: "saveNewChampionship.php",
-                    data: "players=" + TableData+"&cName="+cName+"&cData="+cData
+                    data: "players=" + TableData+"&cName="+cName+"&cData="+cData+"&ownerId="+$_SESSION['user_id']
 //                    success: function(msg){
 //                        console.log("YEYYYAAAAA");
 //                    }
