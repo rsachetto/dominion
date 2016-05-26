@@ -66,10 +66,10 @@
                 console.log("CLICK");
 
                 var TableData;
-                TableData =  JSON.stringify((storeTblValues());
+                TableData =  JSON.stringify(storeTblValues());
                 cName = $('#name').val();
                 cData = $('#datetimepicker').val();
-                
+
 
                 $.ajax({
                     type: "POST",
