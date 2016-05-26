@@ -85,12 +85,12 @@ include('session.php');
                 var TableData;
                 TableData =  JSON.stringify(storeTblValues());
                 cName = $('#name').val();
-                cData = $('#datetimepicker').val();
+                cDate = $('#datetimepicker').val();
 
                 $.ajax({
                     type: "POST",
                     url: "saveNewChampionship.php",
-                    data: "players=" + TableData+"&cName="+cName+"&cData="+cData+"&ownerId="+ownerId
+                    data: "players=" + TableData+"&cName="+cName+"&cDate="+cDate+"&ownerId="+ownerId
 //                    success: function(msg){
 //                        console.log("YEYYYAAAAA");
 //                    }
