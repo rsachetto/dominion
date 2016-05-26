@@ -137,9 +137,7 @@ include('session.php');
 
         $('#players-table').on('click', 'a[class="remove"]', function(e){
             $(this).closest('tr').remove();
-            var rowCount = $('#players-table tr').length;
-            console.log(rowCount);
-            if($('#players-table tr').length == 0)  $("#div-table").hide();
+            if($('#players-table tr').length == 1)  $("#div-table").hide();
         });
 
         $('#submit-bnt').click(function( event ) {
