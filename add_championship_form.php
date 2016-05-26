@@ -18,8 +18,10 @@ include('session.php');
         });
     </script>
     <div class="form-group">
-    <label for="estado">Estado</label>:<select class="form-control id="estado" name="estado"></select>
-        <label for="cidade">Cidade</label>:<select class="form-control id="cidade" name="cidade"></select>
+    <label for="estados">Estado: </label>
+        <select class="form-control id="estados" name="estado"></select>
+        <label for="cidades">Cidade: </label>
+        <select class="form-control id="cidades" name="cidade"></select>
     </div>
 
     <div class="clearfix"></div>
@@ -41,8 +43,6 @@ include('session.php');
         <label for="typeahead-input">Adicionar Jogadores</label>
         <input type="text" id="typeahead-input" class="form-control" data-provide="typeahead" autocomplete="off">
     </div>
-    <script type="text/javascript" src="js/cidades-estados-v0.2.js"></script>
-
     <script type="text/javascript">
 
         function storeTblValues()
@@ -60,11 +60,35 @@ include('session.php');
 
         jQuery(document).ready(function() {
 
-            new dgCidadesEstados(
-                document.getElementById('estado'),
-                document.getElementById('cidade'),
-                true
-            );
+            $.getJSON('js/estados_cidades.json', function (data) {
+                var items = [];
+                var options = '<option value="">escolha um estado</option>';
+                $.each(data, function (key, val) {
+                    options += '<option value="' + val.nome + '">' + val.nome + '</option>';
+                });
+                $("#estados").html(options);
+
+                $("#estados").change(function () {
+
+                    var options_cidades = '';
+                    var str = "";
+
+                    $("#estados option:selected").each(function () {
+                        str += $(this).text();
+                    });
+
+                    $.each(data, function (key, val) {
+                        if(val.nome == str) {
+                            $.each(val.cidades, function (key_city, val_city) {
+                                options_cidades += '<option value="' + val_city + '">' + val_city + '</option>';
+                            });
+                        }
+                    });
+                    $("#cidades").html(options_cidades);
+
+                }).change();
+
+            });
 
             $('#typeahead-input').typeahead({
                 source: function (query, process) {
