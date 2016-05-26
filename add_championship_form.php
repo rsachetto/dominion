@@ -78,7 +78,7 @@
                 event.preventDefault();
 
                 var TableData;
-                TableData =  JSON.stringify(storeTblValues());
+                TableData =  storeTblValues().toJSON();
                 cName = $('#name').val();
                 cData = $('#datetimepicker').val();
 
