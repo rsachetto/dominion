@@ -155,3 +155,7 @@ tt-suggestion:hover {
 .tt-suggestion p {
     margin: 0;
 }
+
+table {
+    font-size: 12px
+}

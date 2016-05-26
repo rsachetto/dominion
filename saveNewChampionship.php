@@ -27,7 +27,7 @@ $stmt->bindParam(':city', $cCity, PDO::PARAM_STR);
 /*** execute the prepared statement ***/
 
 
-$stmt->execute();
+$success = $stmt->execute();
 
 if($success) {
     $response_array['status'] = 'success';
