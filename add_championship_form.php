@@ -108,7 +108,7 @@ include('session.php');
                 td1 = '<td>'+item.id+'</td>';
                 td2 = '<td>'+item.username+'</td>';
                 td3 = '<td>'+item.name+'</td>';
-                td4 = '<td><a href="#" class="cancel" ><span class="glyphicon glyphicon-trash"></span></a></td>'
+                td4 = '<td><a href="#" class="remove" ><span class="glyphicon glyphicon-trash"></span></a></td>'
 
 
                 tr = '<tr>'+td1+td2+td3+td4+'</tr>';
@@ -136,6 +136,7 @@ include('session.php');
         });
 
         $("tr td a .remove").on("click", function(){
+            console.log("REMOVE");
             $(this).parent("tr:first").remove()
         })
 
