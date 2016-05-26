@@ -17,6 +17,11 @@ include('session.php');
             });
         });
     </script>
+    <div class="form-group">
+    <label for="estado">Estado</label>:<select class="form-control id="estado" name="estado"></select>
+        <label for="cidade">Cidade</label>:<select class="form-control id="cidade" name="cidade"></select>
+    </div>
+
     <div class="clearfix"></div>
     <div class="form-group">
         <label for="players-table">Jogadores inscritos</label>
@@ -36,6 +41,8 @@ include('session.php');
         <label for="typeahead-input">Adicionar Jogadores</label>
         <input type="text" id="typeahead-input" class="form-control" data-provide="typeahead" autocomplete="off">
     </div>
+    <script type="text/javascript" src="js/cidades-estados-v0.2.js"></script>
+
     <script type="text/javascript">
 
         function storeTblValues()
@@ -52,6 +59,13 @@ include('session.php');
         }
 
         jQuery(document).ready(function() {
+
+            new dgCidadesEstados(
+                document.getElementById('estado'),
+                document.getElementById('cidade'),
+                true
+            );
+
             $('#typeahead-input').typeahead({
                 source: function (query, process) {
                     return $.get('/search_players.php?query=' + query, function (data) {
