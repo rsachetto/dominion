@@ -80,6 +80,8 @@ include('session.php');
 
                 event.preventDefault();
 
+                var ownerId = <?php echo $_SESSION['user_id']; ?>;
+
                 var TableData;
                 TableData =  JSON.stringify(storeTblValues());
                 cName = $('#name').val();
@@ -88,7 +90,7 @@ include('session.php');
                 $.ajax({
                     type: "POST",
                     url: "saveNewChampionship.php",
-                    data: "players=" + TableData+"&cName="+cName+"&cData="+cData+"&ownerId="+$_SESSION['user_id']
+                    data: "players=" + TableData+"&cName="+cName+"&cData="+cData+"&ownerId="+ownerId
 //                    success: function(msg){
 //                        console.log("YEYYYAAAAA");
 //                    }
