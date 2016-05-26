@@ -111,7 +111,7 @@ include('session.php');
                 td4 = '<td><a class="input-group-addon" href="#"><span class="glyphicon glyphicon-question-sign"></span></a></td>'
 
 
-                tr = '<tr>'+td1+td2+td3++td4'</tr>';
+                tr = '<tr>'+td1+td2+td3+td4+'</tr>';
 
                 var data_in_table = false;
 
