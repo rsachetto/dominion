@@ -28,8 +28,8 @@
       <file leaf-file-name="add_championship_form.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/add_championship_form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
-              <caret line="139" column="75" selection-start-line="139" selection-start-column="75" selection-end-line="139" selection-end-column="75" />
+            <state relative-caret-position="419">
+              <caret line="140" column="34" selection-start-line="140" selection-start-column="34" selection-end-line="140" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -242,14 +242,7 @@
       <updated>1464028604890</updated>
       <workItem from="1464028607281" duration="28267000" />
       <workItem from="1464220626276" duration="2241000" />
-      <workItem from="1464268818115" duration="16431000" />
-    </task>
-    <task id="LOCAL-00123" summary="Configurações iniciais">
-      <created>1464272303419</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1464272303419</updated>
+      <workItem from="1464268818115" duration="16534000" />
     </task>
     <task id="LOCAL-00124" summary="Configurações iniciais">
       <created>1464272471350</created>
@@ -587,11 +580,18 @@
       <option name="project" value="LOCAL" />
       <updated>1464303059905</updated>
     </task>
-    <option name="localTasksCounter" value="172" />
+    <task id="LOCAL-00172" summary="Configurações iniciais">
+      <created>1464303170897</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1464303170897</updated>
+    </task>
+    <option name="localTasksCounter" value="173" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46939000" />
+    <option name="totallyTimeSpent" value="47042000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1034,8 +1034,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/add_championship_form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="139" column="75" selection-start-line="139" selection-start-column="75" selection-end-line="139" selection-end-column="75" />
+        <state relative-caret-position="419">
+          <caret line="140" column="34" selection-start-line="140" selection-start-column="34" selection-end-line="140" selection-end-column="34" />
           <folding />
         </state>
       </provider>
