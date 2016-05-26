@@ -79,8 +79,6 @@
 
                 event.preventDefault();
 
-                console.log("CLICK");
-
                 var TableData;
                 TableData =  JSON.stringify(storeTblValues());
                 cName = $('#name').val();

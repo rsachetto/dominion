@@ -22,4 +22,4 @@ $json=json_encode($results_j);
 error_log($json);
 header('Content-Type: application/json');
 echo $json;
-php?>
+

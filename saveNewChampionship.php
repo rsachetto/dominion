@@ -4,7 +4,7 @@
 $players = stripcslashes($_POST['players']);
 
 // Decode the JSON array
-$players = json_decode($players,TRUE);
+//$players = json_decode($players,TRUE);
 
 // now $tableData can be accessed like a PHP array
-error_log($players);
+error_log($_POST['players']);
