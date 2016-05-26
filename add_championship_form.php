@@ -85,7 +85,8 @@ include('session.php');
                 var TableData;
                 TableData =  JSON.stringify(storeTblValues());
                 cName = $('#name').val();
-                cDate = $('#datetimepicker').val();
+                cDate = $('#datetimepicker').data("DateTimePicker").date().format("YYYY-MM-DD");
+                console.log(cDate);
 
                 $.ajax({
                     type: "POST",
