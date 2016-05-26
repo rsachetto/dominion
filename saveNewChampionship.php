@@ -9,8 +9,8 @@ $players = json_decode($players,TRUE);
 
 $cName = stripcslashes($_POST['cName']);
 $cDate = $_POST['cDate'];
-$cState = $_POST['$cState'];
-$cCity = $_POST['$cCity'];
+$cState = $_POST['cState'];
+$cCity = $_POST['cCity'];
 $ownerId = stripcslashes($_POST['ownerId']);
 
 
@@ -26,7 +26,8 @@ $stmt->bindParam(':city', $cCity, PDO::PARAM_STR);
 
 /*** execute the prepared statement ***/
 
-$success = $stmt->execute();
+
+$stmt->execute();
 
 if($success) {
     $response_array['status'] = 'success';
