@@ -60,7 +60,7 @@
             $('#submit').click(function( event ) {
                 //Get raw HTML of tbody in the data table
                 //var table = $('#players-table tbody').html();
-                event.preventDefault();
+
                 console.log("CLICK");
 
                 var TableData;
@@ -104,6 +104,7 @@
 //                $('body').append($form);
 //                //submit the form
 //                $form.submit();
+                event.preventDefault();
             });
         });
     </script>
