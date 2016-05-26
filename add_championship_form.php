@@ -19,8 +19,8 @@ include('session.php');
             <select class="form-control" id="cities"></select>
         </div>
     </div>
-
     <div class="clearfix"></div>
+    <br><br>
     <div class="form-group">
         <label for="players-table">Jogadores inscritos</label>
         <table class="table table-striped" id="players-table">
