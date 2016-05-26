@@ -135,7 +135,7 @@ include('session.php');
 
         });
 
-        $("tr td .remove").on("click", function(){
+        $("tr td a .remove").on("click", function(){
             $(this).parent("tr:first").remove()
         })
 
