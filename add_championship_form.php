@@ -1,3 +1,6 @@
+<?php
+include('session.php');
+?>
 <form role="form" id="champ-form">
     <div class="form-group">
         <label for="name">Nome do torneio:</label>
