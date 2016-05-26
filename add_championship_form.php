@@ -57,9 +57,10 @@
 
             });
 
-            $('#submit').click(function() {
+            $('#submit').click(function( event ) {
                 //Get raw HTML of tbody in the data table
                 //var table = $('#players-table tbody').html();
+                event.preventDefault();
 
                 var TableData;
                 TableData = $.toJSON(storeTblValues());
