@@ -120,9 +120,12 @@ include('session.php');
                     }
                 });
 
-                console.log(data_in_table);
-
-                $('#players-table').find('> tbody:last-child').append(tr);
+                if(!data_in_table) {
+                    $('#players-table').find('> tbody:last-child').append(tr);
+                }
+                else {
+                    BootstrapDialog.alert('Jogador já adicionado!');
+                }
 
                 $('#typeahead-input').val("");
             },
