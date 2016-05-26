@@ -8,9 +8,10 @@ $players = stripcslashes($_POST['players']);
 $players = json_decode($players,TRUE);
 
 $cName = stripcslashes($_POST['cName']);
-$cDate = stripcslashes($_POST['cDate']);
+$cDate = $_POST['cDate'];
 $ownerId = stripcslashes($_POST['ownerId']);
 
+error_log($cName + " " + $cDate + " ");
 
 /*** prepare the insert ***/
 $stmt = $dbh->prepare("INSERT INTO tournament (name, date, user_id ) VALUES (:name, :date, :user_id )");
