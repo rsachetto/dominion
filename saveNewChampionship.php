@@ -25,9 +25,11 @@ $stmt->bindParam(':state', $cState, PDO::PARAM_STR);
 $stmt->bindParam(':city', $cCity, PDO::PARAM_STR);
 
 /*** execute the prepared statement ***/
-
-
 $success = $stmt->execute();
+
+foreach ($players as $p) {
+    error_log($p["userId"]);
+}
 
 if($success) {
     $response_array['status'] = 'success';
