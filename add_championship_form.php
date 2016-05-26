@@ -108,7 +108,7 @@ include('session.php');
                 td1 = '<td>'+item.id+'</td>';
                 td2 = '<td>'+item.username+'</td>';
                 td3 = '<td>'+item.name+'</td>';
-                td4 = '<a class="input-group-addon" href="#"><span class="glyphicon glyphicon-question-sign"></span></a>'
+                td4 = '<td><a class="input-group-addon" href="#"><span class="glyphicon glyphicon-question-sign"></span></a></td>'
 
 
                 tr = '<tr>'+td1+td2+td3+'</tr>';
