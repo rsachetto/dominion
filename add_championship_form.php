@@ -103,11 +103,24 @@ include('session.php');
             afterSelect: function (item) {
                 $("#div-table").show();
 
+
+
                 td1 = '<td>'+item.id+'</td>';
                 td2 = '<td>'+item.username+'</td>';
                 td3 = '<td>'+item.name+'</td>';
 
                 tr = '<tr>'+td1+td2+td3+'</tr>';
+
+                var data_in_table = false;
+
+                $('#players-table').find('tr').each(function(row, tr){
+                    if (item.id == $(tr).find('td:eq(0)').text()) {
+                        data_in_table = true;
+                        return false;
+                    }
+                });
+
+                console.log(data_in_table);
 
                 $('#players-table').find('> tbody:last-child').append(tr);
 
