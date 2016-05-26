@@ -131,14 +131,11 @@ include('session.php');
 
             displayText: function (item) {
                 return item.name + " - " + item.username;
+
+                if($('#players-table tr').length == 0)  $("#div-table").hide();
             }
 
         });
-
-//        $("tr td a .remove").on("click", function(){
-//            console.log("REMOVE");
-//            $(this).parent("tr:first").remove()
-//        });
 
         $('#players-table').on('click', 'a[class="remove"]', function(e){
             $(this).closest('tr').remove()
