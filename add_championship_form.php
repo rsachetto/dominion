@@ -57,9 +57,11 @@
 
             });
 
-            $('#submit').click(function( event ) {
+            $('#submit-bnt').click(function( event ) {
                 //Get raw HTML of tbody in the data table
                 //var table = $('#players-table tbody').html();
+
+                event.preventDefault();
 
                 console.log("CLICK");
 
@@ -104,10 +106,10 @@
 //                $('body').append($form);
 //                //submit the form
 //                $form.submit();
-                event.preventDefault();
+
             });
         });
     </script>
 
-    <button type="submit" class="btn btn-default">Salvar</button>
+    <button type="submit" id="submit-bnt" class="btn btn-default">Salvar</button>
 </form>
