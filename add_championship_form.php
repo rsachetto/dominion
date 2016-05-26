@@ -20,7 +20,7 @@ include('session.php');
         </div>
     </div>
     <div class="clearfix"></div>
-    <br><br>
+    <br>
     <div class="form-group" id="div-table">
         <label for="players-table">Jogadores inscritos</label>
         <table class="table table-striped" id="players-table">
@@ -110,6 +110,8 @@ include('session.php');
                 tr = '<tr>'+td1+td2+td3+'</tr>';
 
                 $('#players-table').find('> tbody:last-child').append(tr);
+
+                $('#typeahead-input').val("");
             },
 
             displayText: function (item) {
