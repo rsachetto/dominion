@@ -17,11 +17,11 @@ include('session.php');
             });
         });
     </script>
-    <div class="form-group">
+    <div class="input-group">
     <label for="estados">Estado: </label>
-        <select class="form-control id="estados" name="estado"></select>
+        <select class="form-control" id="estados"></select>
         <label for="cidades">Cidade: </label>
-        <select class="form-control id="cidades" name="cidade"></select>
+        <select class="form-control" id="cidades"></select>
     </div>
 
     <div class="clearfix"></div>
