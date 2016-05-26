@@ -19,7 +19,6 @@ $results=$stmt->fetchAll(PDO::FETCH_ASSOC);
 $results_j["suggestions"] = $results;
 
 $json=json_encode($results_j);
-error_log($json);
 header('Content-Type: application/json');
 echo $json;
 
