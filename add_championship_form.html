@@ -25,11 +25,6 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td>john@example.com</td>
-            </tr>
             </tbody>
         </table>
     </div>
@@ -45,8 +40,8 @@
                         return process(data.suggestions);
                     });
                 },
-                afterSelect: function (suggestion) {
-                    $('#players-table > tbody:last-child').append('<tr><td>suggestion.username</td><td>suggestion.name</td></tr>');
+                afterSelect: function (item) {
+                    $('#players-table > tbody:last-child').append('<tr><td>'+item.username+'</td><td>'+item.name+'</td></tr>');
                 },
 
                 displayText: function (item) {
