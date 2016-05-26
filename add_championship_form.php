@@ -1,4 +1,4 @@
-<form role="form">
+<form role="form" id="champ-form">
     <div class="form-group">
         <label for="name">Nome do torneio:</label>
         <input type="text" class="form-control" id="name" placeholder="Nome do torneio">
@@ -59,16 +59,37 @@
 
             $('#submit').click(function() {
                 //Get raw HTML of tbody in the data table
-                var table = $('#players-table tbody').html();
+                //var table = $('#players-table tbody').html();
 
-                for (var i = 0, row; row = table.rows[i]; i++) {
-                    //iterate through rows
-                    //rows would be accessed using the "row" variable assigned in the for loop
-                    for (var j = 0, col; col = row.cells[j]; j++) {
-                        //iterate through columns
-                        //columns would be accessed using the "col" variable assigned in the for loop
-                        console.log(col);
-                    }
+                var TableData;
+                TableData = $.toJSON(storeTblValues());
+                cName = $('#name').val();
+                cData = $('#datetimepicker').val();
+
+                postData = '{players: ' + TableData+", cName: "+cName+", cData:"  + cData + '}'
+                console.log(postData);
+
+//                $.ajax({
+//                    type: "POST",
+//                    url: "saveNewChampionship.php",
+//                    data: "players=" + TableData+"&cName="+cName+"&cData="+cData,
+//                    success: function(msg){
+//                        // return value stored in msg variable
+//                    }
+
+                function storeTblValues()
+                {
+                    var TableData = new Array();
+
+                    $('#players-table tr').each(function(row, tr){
+                        TableData[row]={
+                            "userId" : $(tr).find('td:eq(0)').text(),
+                            "username" :$(tr).find('td:eq(1)').text(),
+                            "name" : $(tr).find('td:eq(2)').text()
+                        }
+                    });
+                    TableData.shift();  // first row will be empty - so remove
+                    return TableData;
                 }
 
 //                //build form HTML (hide keeps the form from being visible)
