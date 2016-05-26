@@ -69,17 +69,15 @@
                 TableData =  JSON.stringify((storeTblValues());
                 cName = $('#name').val();
                 cData = $('#datetimepicker').val();
+                
 
-                postData = '{players: ' + TableData+", cName: "+cName+", cData:"  + cData + '}'
-                console.log(postData);
-
-//                $.ajax({
-//                    type: "POST",
-//                    url: "saveNewChampionship.php",
-//                    data: "players=" + TableData+"&cName="+cName+"&cData="+cData,
-//                    success: function(msg){
-//                        // return value stored in msg variable
-//                    }
+                $.ajax({
+                    type: "POST",
+                    url: "saveNewChampionship.php",
+                    data: "players=" + TableData+"&cName="+cName+"&cData="+cData,
+                    success: function(msg){
+                        // return value stored in msg variable
+                    }
 
                 function storeTblValues()
                 {

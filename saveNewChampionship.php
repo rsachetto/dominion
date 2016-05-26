@@ -1,12 +1,10 @@
 <?php
 
 // Unescape the string values in the JSON array
-$tableData = stripcslashes($_POST['pTableData']);
+$players = stripcslashes($_POST['players']);
 
 // Decode the JSON array
-$tableData = json_decode($tableData,TRUE);
+$players = json_decode($players,TRUE);
 
 // now $tableData can be accessed like a PHP array
-echo $tableData[1]['description'];
-
-error_log($json);
+error_log($players);
