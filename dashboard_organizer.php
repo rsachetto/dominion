@@ -27,7 +27,7 @@ include('session.php');
             });
 
             $("#add-champ").click(function(event){
-                $("#content").load("add_championship_form.html");
+                $("#content").load("add_championship_form.php");
             });
 
         });

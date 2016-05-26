@@ -20,7 +20,8 @@
         <table class="table table-striped" id="players-table">
             <thead>
             <tr>
-                <th>Nome do usuário</th>
+                <th>id</th>
+                <th>Usuário</th>
                 <th>Nome</th>
             </tr>
             </thead>
@@ -41,7 +42,7 @@
                     });
                 },
                 afterSelect: function (item) {
-                    $('#players-table > tbody:last-child').append('<tr><td>'+item.username+'</td><td>'+item.name+'</td></tr>');
+                    $('#players-table > tbody:last-child').append('<tr><td>'+item.id+'</td><td>'+item.username+'</td><td>'+item.name+'</td></tr>');
                 },
 
                 displayText: function (item) {
