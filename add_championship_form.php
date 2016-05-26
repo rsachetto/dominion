@@ -10,20 +10,13 @@ include('session.php');
         <label for="datetimepicker">Data de realização:</label>
         <input type="text" class="form-control" id="datetimepicker" placeholder="Data de realização">
     </div>
-    <script type="text/javascript">
-        $(function () {
-            $('#datetimepicker').datetimepicker({
-                format: 'L'
-            });
-        });
-    </script>
     <div class="row">
-        <div class="col-xs-2">
-            <label for="estados">Estado: </label><select class="form-control" id="estados"></select>
+        <div class="col-xs-4">
+            <label for="states">Estado: </label><select class="form-control" id="states"></select>
          </div>
-        <div class="col-xs-2">
-            <label for="cidades">Cidade: </label>
-            <select class="form-control" id="cidades"></select>
+        <div class="col-xs-4">
+            <label for="cities">Cidade: </label>
+            <select class="form-control" id="cities"></select>
         </div>
     </div>
 
@@ -46,100 +39,106 @@ include('session.php');
         <label for="typeahead-input">Adicionar Jogadores</label>
         <input type="text" id="typeahead-input" class="form-control" data-provide="typeahead" autocomplete="off">
     </div>
-    <script type="text/javascript">
-
-        function storeTblValues()
-        {
-            var TableData = [];
-
-            $('#players-table').find('tr').each(function(row, tr){
-                TableData[row]={
-                    "userId" : $(tr).find('td:eq(0)').text()
-                }
-            });
-            TableData.shift();  // first row will be empty - so remove
-            return TableData;
-        }
-
-        jQuery(document).ready(function() {
-
-            $.getJSON('js/estados_cidades.json', function (data) {
-                var items = [];
-                var options = '<option value="">escolha um estado</option>';
-                $.each(data, function (key, val) {
-                    options += '<option value="' + val.nome + '">' + val.nome + '</option>';
-                });
-                $("#estados").html(options);
-
-                $("#estados").change(function () {
-
-                    var options_cidades = '';
-                    var str = "";
-
-                    $("#estados option:selected").each(function () {
-                        str += $(this).text();
-                    });
-
-                    $.each(data, function (key, val) {
-                        if(val.nome == str) {
-                            $.each(val.cidades, function (key_city, val_city) {
-                                options_cidades += '<option value="' + val_city + '">' + val_city + '</option>';
-                            });
-                        }
-                    });
-                    $("#cidades").html(options_cidades);
-
-                }).change();
-
-            });
-
-            $('#typeahead-input').typeahead({
-                source: function (query, process) {
-                    return $.get('/search_players.php?query=' + query, function (data) {
-                        return process(data.suggestions);
-                    });
-                },
-                afterSelect: function (item) {
-                    td1 = '<td>'+item.id+'</td>';
-                    td2 = '<td>'+item.username+'</td>';
-                    td3 = '<td>'+item.name+'</td>';
-
-                    tr = '<tr>'+td1+td2+td3+'</tr>';
-
-                    $('#players-table').find('> tbody:last-child').append(tr);
-                },
-
-                displayText: function (item) {
-                    return item.name + " - " + item.username;
-                }
-
-            });
-
-            $('#submit-bnt').click(function( event ) {
-                //Get raw HTML of tbody in the data table
-                //var table = $('#players-table tbody').html();
-
-                event.preventDefault();
-
-                var ownerId = <?php echo $_SESSION['user_id']; ?>;
-
-                var TableData;
-                TableData =  JSON.stringify(storeTblValues());
-                cName = $('#name').val();
-                cDate = $('#datetimepicker').data("DateTimePicker").date().format("YYYY-MM-DD");
-                console.log(cDate);
-
-                $.ajax({
-                    type: "POST",
-                    url: "saveNewChampionship.php",
-                    data: "players=" + TableData+"&cName="+cName+"&cDate="+cDate+"&ownerId="+ownerId
-//                    success: function(msg){
-//                        console.log("YEYYYAAAAA");
-//                    }
-                });
-            })
-        });
-    </script>
-
-    <button type="submit" id="submit-bnt" class="btn btn-default">Salvar</button>
+    <button type="submit" id="submit-bnt" class="btn btn-primary">Salvar</button>
 </form>
+<script type="text/javascript">
+
+    function storeTblValues()
+    {
+        var TableData = [];
+
+        $('#players-table').find('tr').each(function(row, tr){
+            TableData[row]={
+                "userId" : $(tr).find('td:eq(0)').text()
+            }
+        });
+        TableData.shift();  // first row will be empty - so remove
+        return TableData;
+    }
+
+    jQuery(document).ready(function() {
+
+        $('#datetimepicker').datetimepicker({
+            format: 'L'
+        });
+
+        $.getJSON('js/estados_cidades.json', function (data) {
+            var items = [];
+            var options = '<option value="">escolha um estado</option>';
+            $.each(data, function (key, val) {
+                options += '<option value="' + val.nome + '">' + val.nome + '</option>';
+            });
+            $("#states").html(options);
+
+            $("#states").change(function () {
+
+                var options_cidades = '';
+                var str = "";
+
+                $("#states option:selected").each(function () {
+                    str += $(this).text();
+                });
+
+                $.each(data, function (key, val) {
+                    if(val.nome == str) {
+                        $.each(val.cidades, function (key_city, val_city) {
+                            options_cidades += '<option value="' + val_city + '">' + val_city + '</option>';
+                        });
+                    }
+                });
+                $("#cities").html(options_cidades);
+
+            }).change();
+
+        });
+
+        $('#typeahead-input').typeahead({
+            source: function (query, process) {
+                return $.get('/search_players.php?query=' + query, function (data) {
+                    return process(data.suggestions);
+                });
+            },
+            afterSelect: function (item) {
+                td1 = '<td>'+item.id+'</td>';
+                td2 = '<td>'+item.username+'</td>';
+                td3 = '<td>'+item.name+'</td>';
+
+                tr = '<tr>'+td1+td2+td3+'</tr>';
+
+                $('#players-table').find('> tbody:last-child').append(tr);
+            },
+
+            displayText: function (item) {
+                return item.name + " - " + item.username;
+            }
+
+        });
+
+        $('#submit-bnt').click(function( event ) {
+
+            event.preventDefault();
+
+            var ownerId = <?php echo $_SESSION['user_id']; ?>;
+
+            var TableData;
+            TableData =  JSON.stringify(storeTblValues());
+            cName = $('#name').val();
+            cDate = $('#datetimepicker').data("DateTimePicker").date().format("YYYY-MM-DD");
+            cState = $('#states').val();
+            cCity = $('#cities').val();
+
+            $.ajax({
+                type: "POST",
+                url: "saveNewChampionship.php",
+                data: "players=" + TableData+"&cName="+cName+"&cDate="+cDate+"&ownerId="+ownerId+"&cCity="+cCity+"&cState="+cState,
+                success: function(data) {
+                    if(data.status == 'success'){
+                        alert("Thank you for subscribing!");
+                    }else if(data.status == 'error'){
+                        alert("Error on query!");
+                    }
+                }
+            });
+        })
+    });
+</script>
