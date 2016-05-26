@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a813992e-1824-4434-a2c0-61d7b968686f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/add_championship_form.php" afterPath="$PROJECT_DIR$/add_championship_form.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/saveNewChampionship.php" afterPath="$PROJECT_DIR$/saveNewChampionship.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/search_players.php" afterPath="$PROJECT_DIR$/search_players.php" />
     </list>
     <ignored path="dominion.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,8 +30,8 @@
       <file leaf-file-name="add_championship_form.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/add_championship_form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1351">
-              <caret line="42" column="81" selection-start-line="42" selection-start-column="81" selection-end-line="42" selection-end-column="81" />
+            <state relative-caret-position="494">
+              <caret line="165" column="45" selection-start-line="165" selection-start-column="45" selection-end-line="165" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -48,11 +50,11 @@
       <file leaf-file-name="search_players.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/search_players.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+            <state relative-caret-position="105">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
               <folding>
-                <marker date="1464274427839" expanded="true" signature="124:131" placeholder="SELECT usern... user" />
-                <marker date="1464274427839" expanded="true" signature="124:206" placeholder="SELECT id, u... user" />
+                <marker date="1464304430071" expanded="true" signature="124:131" placeholder="SELECT usern... user" />
+                <marker date="1464304430071" expanded="true" signature="124:206" placeholder="SELECT id, u... user" />
               </folding>
             </state>
           </provider>
@@ -61,10 +63,11 @@
       <file leaf-file-name="saveNewChampionship.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/saveNewChampionship.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+            <state relative-caret-position="540">
+              <caret line="42" column="40" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
               <folding>
-                <marker date="1464303772635" expanded="true" signature="409:514" placeholder="INSERT INTO tournament... " />
+                <marker date="1464304591186" expanded="true" signature="409:514" placeholder="INSERT INTO tournament... " />
+                <marker date="1464304591186" expanded="true" signature="971:1061" placeholder="INSERT INTO tournament_has_user... " />
               </folding>
             </state>
           </provider>
@@ -101,11 +104,11 @@
         <option value="$PROJECT_DIR$/search_users.php" />
         <option value="$PROJECT_DIR$/js/jquery.autocomplete.js" />
         <option value="$PROJECT_DIR$/add_championship_form.html" />
-        <option value="$PROJECT_DIR$/search_players.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/dashboard_organizer.php" />
         <option value="$PROJECT_DIR$/js/add_champ_scritps.js" />
         <option value="$PROJECT_DIR$/add_championship_form.php" />
+        <option value="$PROJECT_DIR$/search_players.php" />
         <option value="$PROJECT_DIR$/saveNewChampionship.php" />
       </list>
     </option>
@@ -260,14 +263,7 @@
       <updated>1464028604890</updated>
       <workItem from="1464028607281" duration="28267000" />
       <workItem from="1464220626276" duration="2241000" />
-      <workItem from="1464268818115" duration="17037000" />
-    </task>
-    <task id="LOCAL-00126" summary="Configurações iniciais">
-      <created>1464272707597</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1464272707597</updated>
+      <workItem from="1464268818115" duration="17865000" />
     </task>
     <task id="LOCAL-00127" summary="Configurações iniciais">
       <created>1464272936782</created>
@@ -605,11 +601,18 @@
       <option name="project" value="LOCAL" />
       <updated>1464303379581</updated>
     </task>
-    <option name="localTasksCounter" value="175" />
+    <task id="LOCAL-00175" summary="Configurações iniciais">
+      <created>1464303776479</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1464303776479</updated>
+    </task>
+    <option name="localTasksCounter" value="176" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47545000" />
+    <option name="totallyTimeSpent" value="48373000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -726,8 +729,8 @@
         <state relative-caret-position="270">
           <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
           <folding>
-            <marker date="1464274427839" expanded="true" signature="124:131" placeholder="SELECT usern... user" />
-            <marker date="1464274427839" expanded="true" signature="124:206" placeholder="SELECT id, u... user" />
+            <marker date="1464304430071" expanded="true" signature="124:131" placeholder="SELECT usern... user" />
+            <marker date="1464304430071" expanded="true" signature="124:206" placeholder="SELECT id, u... user" />
           </folding>
         </state>
       </provider>
@@ -780,8 +783,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1464274427839" expanded="true" signature="124:131" placeholder="SELECT usern... user" />
-            <marker date="1464274427839" expanded="true" signature="124:206" placeholder="SELECT id, u... user" />
+            <marker date="1464304430071" expanded="true" signature="124:131" placeholder="SELECT usern... user" />
+            <marker date="1464304430071" expanded="true" signature="124:206" placeholder="SELECT id, u... user" />
           </folding>
         </state>
       </provider>
@@ -1042,29 +1045,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/add_championship_form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1351">
-          <caret line="42" column="81" selection-start-line="42" selection-start-column="81" selection-end-line="42" selection-end-column="81" />
+        <state relative-caret-position="494">
+          <caret line="165" column="45" selection-start-line="165" selection-start-column="45" selection-end-line="165" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/search_players.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+        <state relative-caret-position="105">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
           <folding>
-            <marker date="1464274427839" expanded="true" signature="124:131" placeholder="SELECT usern... user" />
-            <marker date="1464274427839" expanded="true" signature="124:206" placeholder="SELECT id, u... user" />
+            <marker date="1464304430071" expanded="true" signature="124:131" placeholder="SELECT usern... user" />
+            <marker date="1464304430071" expanded="true" signature="124:206" placeholder="SELECT id, u... user" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/saveNewChampionship.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+        <state relative-caret-position="540">
+          <caret line="42" column="40" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
           <folding>
-            <marker date="1464303772635" expanded="true" signature="409:514" placeholder="INSERT INTO tournament... " />
+            <marker date="1464304591186" expanded="true" signature="409:514" placeholder="INSERT INTO tournament... " />
+            <marker date="1464304591186" expanded="true" signature="971:1061" placeholder="INSERT INTO tournament_has_user... " />
           </folding>
         </state>
       </provider>

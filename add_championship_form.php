@@ -161,9 +161,9 @@ include('session.php');
                 data: "players=" + TableData+"&cName="+cName+"&cDate="+cDate+"&ownerId="+ownerId+"&cCity="+cCity+"&cState="+cState,
                 success: function(data) {
                     if(data.status == 'success'){
-                        alert("Thank you for subscribing!");
+                        alert("Campeonato adicionado com sucesso!");
                     }else if(data.status == 'error'){
-                        alert("Error on query!");
+                        alert("Erro ao salvar campeonato!");
                     }
                 }
             });

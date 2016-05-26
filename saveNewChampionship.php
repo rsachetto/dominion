@@ -26,9 +26,14 @@ $stmt->bindParam(':city', $cCity, PDO::PARAM_STR);
 
 /*** execute the prepared statement ***/
 $success = $stmt->execute();
+$champId = $dbh->lastInsertId();
+
 
 foreach ($players as $p) {
-    error_log($p["userId"]);
+    $stmt = $dbh->prepare("INSERT INTO tournament_has_user (tournament_id, user_id) VALUES (:tournament_id, :user_id)");
+    $stmt->bindParam(':tournament_id', $champId, PDO::PARAM_INT);
+    $stmt->bindParam(':user_id', $p["userId"], PDO::PARAM_INT);
+    $success &= $stmt->execute();
 }
 
 if($success) {
