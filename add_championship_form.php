@@ -131,14 +131,13 @@ include('session.php');
 
             displayText: function (item) {
                 return item.name + " - " + item.username;
-
-                if($('#players-table tr').length == 0)  $("#div-table").hide();
             }
 
         });
 
         $('#players-table').on('click', 'a[class="remove"]', function(e){
             $(this).closest('tr').remove()
+            if($('#players-table tr').length == 0)  $("#div-table").hide();
         })
 
         $('#submit-bnt').click(function( event ) {
