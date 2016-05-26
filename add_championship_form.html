@@ -22,15 +22,6 @@
     </div>
 
     <script type="text/javascript">
-//        jQuery(document).ready(function() {
-//            $('#typeahead-input').autocomplete({
-//                serviceUrl: '/search_players.php',
-//                onSelect: function (suggestion) {
-//                    alert('You selected: ' + suggestion.username);
-//                }
-//            });
-//        })
-
         jQuery(document).ready(function() {
             $('#typeahead-input').typeahead({
                 source: function (query, process) {
@@ -39,7 +30,11 @@
                     });
                 },
                 afterSelect: function (suggestion) {
-                    console.log("SEL");
+                    
+                },
+
+                displayText: function (item) {
+                    return item.name + " - " + item.username
                 }
 
             });
