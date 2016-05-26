@@ -108,7 +108,7 @@ include('session.php');
                 td1 = '<td>'+item.id+'</td>';
                 td2 = '<td>'+item.username+'</td>';
                 td3 = '<td>'+item.name+'</td>';
-                td4 = '<td class="remove" ><a href="#" ><span class="glyphicon glyphicon-trash"></span></a></td>'
+                td4 = '<td><a class="remove" href="#" ><span class="glyphicon glyphicon-trash"></span></a></td>'
 
 
                 tr = '<tr>'+td1+td2+td3+td4+'</tr>';
@@ -135,9 +135,13 @@ include('session.php');
 
         });
 
-        $("tr td a .remove").on("click", function(){
-            console.log("REMOVE");
-            $(this).parent("tr:first").remove()
+//        $("tr td a .remove").on("click", function(){
+//            console.log("REMOVE");
+//            $(this).parent("tr:first").remove()
+//        });
+
+        $('#players-table').on('click', 'a[class="remove"]', function(e){
+            $(this).closest('tr').remove()
         })
 
         $('#submit-bnt').click(function( event ) {
