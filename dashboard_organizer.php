@@ -20,6 +20,12 @@ include('session.php');
 
     <script type="text/javascript">
         $(document).ready(function(){
+
+            $.ajaxSetup ({
+                // Disable caching of AJAX responses
+                cache: false
+            });
+
             $("#add-champ").click(function(event){
                 $("#content").load("add_championship_form.html");
             });
