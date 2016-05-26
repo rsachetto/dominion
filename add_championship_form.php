@@ -41,9 +41,7 @@
 
             $('#players-table').find('tr').each(function(row, tr){
                 TableData[row]={
-                    "userId" : $(tr).find('td:eq(0)').text(),
-                    "username" :$(tr).find('td:eq(1)').text(),
-                    "name" : $(tr).find('td:eq(2)').text()
+                    "userId" : $(tr).find('td:eq(0)').text()
                 }
             });
             TableData.shift();  // first row will be empty - so remove
