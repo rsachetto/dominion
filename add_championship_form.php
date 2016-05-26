@@ -21,7 +21,7 @@ include('session.php');
     </div>
     <div class="clearfix"></div>
     <br><br>
-    <div class="form-group">
+    <div class="form-group" id="div-table">
         <label for="players-table">Jogadores inscritos</label>
         <table class="table table-striped" id="players-table">
             <thead>
@@ -57,6 +57,8 @@ include('session.php');
     }
 
     jQuery(document).ready(function() {
+
+        $("#div-table").hide();
 
         $('#datetimepicker').datetimepicker({
             format: 'L'
@@ -99,6 +101,8 @@ include('session.php');
                 });
             },
             afterSelect: function (item) {
+                $("#div-table").show();
+
                 td1 = '<td>'+item.id+'</td>';
                 td2 = '<td>'+item.username+'</td>';
                 td3 = '<td>'+item.name+'</td>';
