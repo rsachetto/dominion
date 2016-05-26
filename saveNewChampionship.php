@@ -11,7 +11,7 @@ if($players == NULL) {
     error_log("NULLLLL" + json_last_error_msg());
 }
 else {
-    error_log("NOT NULL");
+    error_log($players[0]['userId']);
 }
 // now $tableData can be accessed like a PHP array
 
