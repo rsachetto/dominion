@@ -34,6 +34,22 @@
         <input type="text" id="typeahead-input" class="form-control" data-provide="typeahead" autocomplete="off">
     </div>
     <script type="text/javascript">
+
+        function storeTblValues()
+        {
+            var TableData = [];
+
+            $('#players-table').find('tr').each(function(row, tr){
+                TableData[row]={
+                    "userId" : $(tr).find('td:eq(0)').text(),
+                    "username" :$(tr).find('td:eq(1)').text(),
+                    "name" : $(tr).find('td:eq(2)').text()
+                }
+            });
+            TableData.shift();  // first row will be empty - so remove
+            return TableData;
+        }
+
         jQuery(document).ready(function() {
             $('#typeahead-input').typeahead({
                 source: function (query, process) {
@@ -48,7 +64,7 @@
 
                     tr = '<tr>'+td1+td2+td3+'</tr>';
 
-                    $('#players-table > tbody:last-child').append(tr);
+                    $('#players-table').find('> tbody:last-child').append(tr);
                 },
 
                 displayText: function (item) {
@@ -70,42 +86,15 @@
                 cName = $('#name').val();
                 cData = $('#datetimepicker').val();
 
-
                 $.ajax({
                     type: "POST",
                     url: "saveNewChampionship.php",
-                    data: "players=" + TableData+"&cName="+cName+"&cData="+cData,
-                    success: function(msg){
-                        // return value stored in msg variable
-                    }
-
-                function storeTblValues()
-                {
-                    var TableData = new Array();
-
-                    $('#players-table tr').each(function(row, tr){
-                        TableData[row]={
-                            "userId" : $(tr).find('td:eq(0)').text(),
-                            "username" :$(tr).find('td:eq(1)').text(),
-                            "name" : $(tr).find('td:eq(2)').text()
-                        }
-                    });
-                    TableData.shift();  // first row will be empty - so remove
-                    return TableData;
-                }
-
-//                //build form HTML (hide keeps the form from being visible)
-//                $form = $('<form/>').attr({method: 'POST', action: ''}).hide();
-//                //build textarea HTML
-//                $textarea = $('<textarea/>').attr({name: 'data_rows'}).val(data_rows);
-//                //add textarea to form
-//                $form.append($textarea);
-//                //add form to the document body
-//                $('body').append($form);
-//                //submit the form
-//                $form.submit();
-
-            });
+                    data: "players=" + TableData+"&cName="+cName+"&cData="+cData
+//                    success: function(msg){
+//                        console.log("YEYYYAAAAA");
+//                    }
+                });
+            })
         });
     </script>
 
