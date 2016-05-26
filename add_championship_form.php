@@ -124,8 +124,10 @@ include('session.php');
             TableData =  JSON.stringify(storeTblValues());
             cName = $('#name').val();
             cDate = $('#datetimepicker').data("DateTimePicker").date().format("YYYY-MM-DD");
-            cState = $('#states').val();
-            cCity = $('#cities').val();
+            cState = $( "#states option:selected" ).text();
+            cCity = $( "#cities option:selected" ).text();
+
+            console.log(cState);
 
             $.ajax({
                 type: "POST",
