@@ -29,7 +29,7 @@ include('session.php');
     <script type="text/javascript">
         $(document).ready(function(){
 
-            $("#content").load("show_championships.php");
+            $("#content").load("show_championships_admin.php");
 
 
             $.ajaxSetup ({
@@ -38,17 +38,13 @@ include('session.php');
             });
 
             $("#overview").click(function(event){
-                $("#content").load("show_championships.php");
-            });
-
-            $("#add-champ").click(function(event){
-                $("#content").load("add_championship_form.php");
+                $("#content").load("show_championships_admin.php");
             });
 
         });
     </script>
 
-    <title>Bem vindo organizador </title>
+    <title>Bem vindo adminstrador </title>
 </head>
 
 <body>
@@ -56,7 +52,7 @@ include('session.php');
 <div class="container">
     <div class="row profile">
         <?php
-        include('organizer_sidebar.php');
+        include('admin_sidebar.php');
         ?>
         <div class="col-md-9">
             <div class="profile-content" id="content">

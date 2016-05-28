@@ -1,6 +1,7 @@
 <?php
 include('session.php');
 ?>
+<h2>Criar novo campeonato</h2>
 <form role="form" id="champ-form">
     <div class="form-group">
         <label for="name">Nome do torneio:</label>
@@ -152,8 +153,6 @@ include('session.php');
             cDate = $('#datetimepicker').data("DateTimePicker").date().format("YYYY-MM-DD");
             cState = $( "#states option:selected" ).text();
             cCity = $( "#cities option:selected" ).text();
-
-            console.log(cState);
 
             $.ajax({
                 type: "POST",

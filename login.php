@@ -4,15 +4,13 @@ require("password.php");
 session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-    // username and password sent from form
-
     $myusername = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
     $mypassword = sha1(filter_var($_POST['password'], FILTER_SANITIZE_STRING));
 
     try
     {
         /*** prepare the select statement ***/
-        $stmt = $dbh->prepare("SELECT id, username, role FROM user WHERE username = :myusername AND password = :mypassword");
+        $stmt = $dbh->prepare("SELECT user.id, username, role, name FROM user WHERE username = :myusername AND password = :mypassword");
 
         /*** bind the parameters ***/
         $stmt->bindParam(':myusername', $myusername, PDO::PARAM_STR);
@@ -25,6 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $user_info = $stmt->fetch();
         $user_id = $user_info['id'];
         $role = $user_info['role'];
+        $name = $user_info['name'];
 
         /*** if we have no result then fail boat ***/
         if($user_info == false)
@@ -38,13 +37,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_id'] = $user_id;
             $_SESSION['role'] = $role;
             $_SESSION['username'] = $myusername;
+            $_SESSION['name'] = $name;
 
             //$message = 'Permissao: '.$role. " Id: ".$user_id;
             
-            if($role == "organizador")
-            header("location:dashboard_organizer.php");
-            elseif ($role == "jogador")
+            if($role == "organizer")
+                header("location:dashboard_organizer.php");
+            elseif ($role == "player")
                 header("location:dashboard_player.php");
+            elseif ($role == "admin")
+                header("location:dashboard_admin.php");
         }
 
 
@@ -60,48 +62,43 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 
 <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <link href="css/signin.css" rel="stylesheet">
+
     <title>Login Page</title>
-
-    <style type = "text/css">
-        body {
-            font-family:Arial, Helvetica, sans-serif;
-            font-size:14px;
-        }
-
-        label {
-            font-weight:bold;
-            width:100px;
-            font-size:14px;
-        }
-
-        .box {
-            border:#666666 solid 1px;
-        }
-    </style>
 
 </head>
 
-<body bgcolor = "#FFFFFF">
+<body>
 
-<div align = "center">
-    <div style = "width:300px; border: solid 1px #333333; " align = "left">
-        <div style = "background-color:#333333; color:#FFFFFF; padding:3px;"><b>Login</b></div>
+<div class="container">
 
-        <div style = "margin:30px">
+    <form class="form-signin" action = "" method = "post" >
+        <h2 class="form-signin-heading">Login</h2>
+        <label for="username" class="sr-only">Email address</label>
+        <input type="text" name="username" class="form-control" placeholder="Usuário" required autofocus>
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" name="password" class="form-control" placeholder="Senha" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
 
-            <form action = "" method = "post">
-                <label>UserName  :</label><input type = "text" name = "username" class = "box"/><br /><br />
-                <label>Password  :</label><input type = "password" name = "password" class = "box" /><br/><br />
-                <input type = "submit" value = " Submit "/><br />
-            </form>
+</div> <!-- /container -->
 
-            <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $message; ?></div>
 
-        </div>
-
-    </div>
-
-</div>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="js/ie10-viewport-bug-workaround.js"></script>
 
 </body>
 </html>

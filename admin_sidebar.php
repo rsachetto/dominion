@@ -3,10 +3,10 @@
         <!-- SIDEBAR USER TITLE -->
         <div class="profile-usertitle">
             <div class="profile-usertitle-name">
-                Marcus Doe
+                <?php echo $_SESSION['name']; ?>
             </div>
             <div class="profile-usertitle-job">
-                Organizador
+                Administrador
             </div>
         </div>
         <!-- END SIDEBAR USER TITLE -->
@@ -21,7 +21,7 @@
                 <li>
                     <a href="#" id="add-champ">
                         <i class="glyphicon glyphicon-plus"></i>
-                        Criar novo campeonato </a>
+                        Adicionar organizador </a>
                 </li>
                 <li>
                     <a href="#">
