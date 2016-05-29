@@ -70,7 +70,9 @@ else if($_POST['submitted'] == 'true') {
     }
 }
 
-error_log($whereAll);
+error_log(json_encode(
+    SSP::complex( $_POST, $sql_details, $table, $primaryKey, $columns, $whereResult = null, $whereAll )
+));
 
 echo json_encode(
     SSP::complex( $_POST, $sql_details, $table, $primaryKey, $columns, $whereResult = null, $whereAll )

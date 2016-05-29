@@ -3,7 +3,7 @@
         <!-- SIDEBAR USER TITLE -->
         <div class="profile-usertitle">
             <div class="profile-usertitle-name">
-                Marcus Doe
+                <?php echo $_SESSION['name']; ?>
             </div>
             <div class="profile-usertitle-job">
                 Organizador

@@ -101,17 +101,18 @@ else if(isset($_GET['valid'])) {
 
     jQuery(document).ready(function() {
 
+        var players_data = <?php echo json_encode($players); ?>;
+        var tId = <?php echo $t_id; ?>;
+
         $('#btn-save').click(function (event) {
 
             event.preventDefault();
-
-            var tId = <?php echo $t_id; ?>;
             var tBonus = <?php echo $tournament_info['bonus'] ?>;
 
             $.ajax({
                 type: "POST",
                 url: "save_results.php",
-                data: "action=validate&tId="+tId+"&tBonus="+tBonus,
+                data: "players=" + JSON.stringify(players_data)+"&action=validate&tId="+tId+"&tBonus="+tBonus,
                 success: function(data) {
                     if(data.status == 'success'){
                         alert("Resultados salvos com sucesso!");
@@ -126,8 +127,6 @@ else if(isset($_GET['valid'])) {
         $('#btn-cancel').click(function (event) {
 
             event.preventDefault();
-
-            var tId = <?php echo $t_id; ?>;
 
             $.ajax({
                 type: "POST",

@@ -1,16 +1,49 @@
 <?php
 include('session.php');
 ?>
-<html">
+<html>
 
 <head>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/u/bs/dt-1.10.12,r-2.1.0/datatables.min.css"/>
+
 
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
-    <title>Bem vindo jogador </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/locale/pt-br.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/locale/pt-br.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/js/bootstrap-dialog.min.js"></script>
+
+    <script src="js/bootstrap-datetimepicker.min.js"></script>
+    <script src="js/bootstrap3-typeahead.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdn.datatables.net/u/bs/dt-1.10.12,r-2.1.0/datatables.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $("#content").load("show_ranking.php");
+
+            $.ajaxSetup ({
+                // Disable caching of AJAX responses
+                cache: false
+            });
+
+            $("#overview").click(function(event){
+                $("#content").load("show_ranking.php");
+            });
+
+        });
+    </script>
+
+    <title>Bem vindo organizador </title>
 </head>
 
 <body>
@@ -21,15 +54,12 @@ include('session.php');
         include('player_sidebar.php');
         ?>
         <div class="col-md-9">
-            <div class="profile-content">
-                Some user related content goes here...
+            <div class="profile-content" id="content">
             </div>
         </div>
     </div>
 </div>
 
-<!--<h1>Welcome --><?php //echo $_SESSION['username']; ?><!--</h1>-->
-<!--<h2><a href = "logout.php">Sign Out</a></h2>-->
 </body>
 
 </html>

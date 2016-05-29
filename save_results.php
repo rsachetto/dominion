@@ -1,17 +1,27 @@
 <?php
-include("session.php");
-
+include "session.php";
+include "helpers.php";
 
 //TODO: verificar se algum campeao ja foi adicionado
 $t_id = $_POST['tId'];
 $response_array['status'] = 'error';
 
+$players = stripcslashes($_POST['players']);
+
+// Decode the JSON array
+$players = json_decode($players, TRUE);
+//error_log(print_r($players, true));
 
 if(isset($_POST['action']) && $_POST['action'] == 'validate') {
+    //Primeiro validamos o torneio
     $stmt = $dbh->prepare("UPDATE tournament SET validated = 1, bonus=:tBonus WHERE id=:tournament_id");
     $stmt->bindParam(':tournament_id', $t_id, PDO::PARAM_INT);
     $stmt->bindParam(':tBonus', $_POST['tBonus'], PDO::PARAM_STR);
     $success = $stmt->execute();
+
+    //Depois podemos atualizar o rank
+    $success &= update_prk($dbh, $players, $t_id, floatval($_POST['tBonus']));
+    
     if ($success) {
         $response_array['status'] = 'success';
     } else {
@@ -30,12 +40,6 @@ else if(isset($_POST['action']) && $_POST['action'] == 'invalidate') {
 }
 
 else {
-
-    $players = stripcslashes($_POST['players']);
-
-// Decode the JSON array
-    $players = json_decode($players, TRUE);
-    error_log(print_r($players, true));
 
     $success = true;
 

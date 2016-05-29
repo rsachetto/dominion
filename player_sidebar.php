@@ -3,10 +3,10 @@
         <!-- SIDEBAR USER TITLE -->
         <div class="profile-usertitle">
             <div class="profile-usertitle-name">
-                Marcus Doe
+                <?php echo $_SESSION['name']; ?>
             </div>
             <div class="profile-usertitle-job">
-                Developer
+                Jogador
             </div>
         </div>
         <!-- END SIDEBAR USER TITLE -->
@@ -14,24 +14,19 @@
         <div class="profile-usermenu">
             <ul class="nav">
                 <li class="active">
-                    <a href="#">
+                    <a href="#" id="overview">
                         <i class="glyphicon glyphicon-home"></i>
                         Overview </a>
                 </li>
                 <li>
                     <a href="#">
                         <i class="glyphicon glyphicon-user"></i>
-                        Account Settings </a>
+                        Minha Conta </a>
                 </li>
                 <li>
-                    <a href="#" target="_blank">
-                        <i class="glyphicon glyphicon-ok"></i>
-                        Tasks </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="glyphicon glyphicon-flag"></i>
-                        Help </a>
+                    <a href="logout.php">
+                        <i class="glyphicon glyphicon-remove"></i>
+                        Sair </a>
                 </li>
             </ul>
         </div>
