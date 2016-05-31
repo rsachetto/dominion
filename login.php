@@ -5,9 +5,6 @@ session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    error_log($_POST['username']);
-    error_log($_POST['password']);
-
     $myusername = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
     $mypassword = sha1(filter_var($_POST['password'], FILTER_SANITIZE_STRING));
 
@@ -28,6 +25,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $user_id = $user_info['id'];
         $role = $user_info['role'];
         $name = $user_info['name'];
+
+        error_log(print_r($user_info, true));
 
         /*** if we have no result then fail boat ***/
         if($user_info == false)
