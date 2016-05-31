@@ -25,6 +25,48 @@ $tournament_results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $prk_count = array();
 $prk_user = array();
 
+$filter= false;
+
+if ( isset($_POST['search']) && $_POST['search']['value'] != '' ) {
+
+    $estadosBrasileiros = array(
+        'AC'=>'Acre',
+        'AL'=>'Alagoas',
+        'AP'=>'Amapá',
+        'AM'=>'Amazonas',
+        'BA'=>'Bahia',
+        'CE'=>'Ceará',
+        'DF'=>'Distrito Federal',
+        'ES'=>'Espírito Santo',
+        'GO'=>'Goiás',
+        'MA'=>'Maranhão',
+        'MT'=>'Mato Grosso',
+        'MS'=>'Mato Grosso do Sul',
+        'MG'=>'Minas Gerais',
+        'PA'=>'Pará',
+        'PB'=>'Paraíba',
+        'PR'=>'Paraná',
+        'PE'=>'Pernambuco',
+        'PI'=>'Piauí',
+        'RJ'=>'Rio de Janeiro',
+        'RN'=>'Rio Grande do Norte',
+        'RS'=>'Rio Grande do Sul',
+        'RO'=>'Rondônia',
+        'RR'=>'Roraima',
+        'SC'=>'Santa Catarina',
+        'SP'=>'São Paulo',
+        'SE'=>'Sergipe',
+        'TO'=>'Tocantins'
+    );
+
+    $str = $_POST['search']['value'];
+
+    $estado = $estadosBrasileiros[$str];
+
+    $filter = true;
+
+
+}
 
 foreach ($tournament_results as $result) {
 
@@ -34,15 +76,25 @@ foreach ($tournament_results as $result) {
         $prk_user[$id]['name'] = $id;
     }
 
+
     if(intval($prk_count[$id]) <= 8) {
-        $prk_label = 'prk' . $prk_count[$id];
-        $prk_user[$id][$prk_label] = $result['prk'];
+        if(!$filter) {
+            $prk_label = 'prk' . $prk_count[$id];
+            $prk_user[$id][$prk_label] = $result['prk'];
+            $prk_count[$id] += 1;
+        }
+        else {
+            error_log($result['state'].' - '.$estado);
+            if($result['state'] == $estado) {
+                $prk_label = 'prk' . $prk_count[$id];
+                error_log($prk_label.' - '.$result['prk']);
+                $prk_user[$id][$prk_label] = $result['prk'];
+                $prk_count[$id] += 1;
+            }
+        }
     }
 
-    $prk_count[$id] += 1;
-    
 }
-
 
 $out = array();
 foreach ($prk_user as &$prks) {
@@ -66,12 +118,13 @@ foreach ($prk_user as &$prks) {
 
 //ordena s
 usort($out, "cmp_rank");
-
 $count = 1;
+
 foreach ($out as &$prks) {
     $prks['position'] = $count;
     $count++;
 }
+
 
 //TODO: tem que ver a melhor forma de retornar esse resultados
 $recordsTotal = count($out);

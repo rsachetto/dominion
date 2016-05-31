@@ -1,20 +1,68 @@
 <?php
 include('session.php');
+$name = "";
+$date = "";
+$players = array();
+$state = "";
+$city= "";
+$edit=false;
+
+if(isset($_GET['t_id'])) {
+
+    $edit = true;
+    $t_id = $_GET['t_id'];
+    $user_id = $_SESSION['user_id'];
+
+// do query
+    $stmt = $dbh->prepare('SELECT id, user_id, date, name, city, state FROM tournament WHERE id=:t_id and user_id=:user_id');
+    $stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
+    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+
+    $stmt->execute();
+
+    $tournament_info = array();
+    $tournament_info = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $stmt = $dbh->prepare('select user.id, user.username, user.name, tournament_has_user.num_first_places, tournament_has_user.num_second_places, tournament_has_user.champion, tournament_has_user.finalist, tournament_has_user.semi_finalist
+                           from user
+                              join tournament_has_user on (user.id = tournament_has_user.user_id)
+                              join tournament on (tournament_has_user.tournament_id = :t_id)
+                              GROUP BY user.id;');
+
+    $stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $players = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $name = $tournament_info['name'];
+    $date = date( 'd/m/y', strtotime($tournament_info['date']));
+    $state = $tournament_info['state'];
+    $city = $tournament_info['city'];
+
+    error_log(print_r($players, true));
+
+}
+
+if (!$edit)
+    echo '<h2>Criar novo torneio</h2>';
+else
+    echo '<h2>Editar torneio</h2>';
 ?>
-<h2>Criar novo campeonato</h2>
+
+
 <form role="form" id="champ-form">
     <div class="form-group">
         <label for="name">Nome do torneio:</label>
-        <input type="text" class="form-control" id="name" placeholder="Nome do torneio">
+        <input type="text" class="form-control" id="name" placeholder="Nome do torneio" value="<?php echo $name; ?>" >
     </div>
     <div class="form-group">
         <label for="datetimepicker">Data de realização:</label>
-        <input type="text" class="form-control" id="datetimepicker" placeholder="Data de realização">
+        <input type="text" class="form-control" id="datetimepicker" placeholder="Data de realização" value="<?php echo $date; ?>">
     </div>
     <div class="row">
         <div class="col-xs-4">
             <label for="states">Estado: </label><select class="form-control" id="states"></select>
-         </div>
+        </div>
         <div class="col-xs-4">
             <label for="cities">Cidade: </label>
             <select class="form-control" id="cities"></select>
@@ -34,6 +82,15 @@ include('session.php');
             </tr>
             </thead>
             <tbody>
+            <?php
+            foreach ($players as $player) {
+                $tr_id = '<td>'.$player['id'].'</td>';
+                $tr_username = '<td>'.$player['username'].'</td>';
+                $tr_name = '<td>'.$player['name'].'</td>';
+                $tr_del = '<td><a class="remove" href="#" ><span class="glyphicon glyphicon-trash"></span></a></td>';
+                echo '<tr>'.$tr_id.$tr_username.$tr_name.$tr_del.'</tr>';
+            }
+            ?>
             </tbody>
         </table>
     </div>
@@ -60,7 +117,8 @@ include('session.php');
 
     jQuery(document).ready(function() {
 
-        $("#div-table").hide();
+        var edit = <?php echo json_encode($edit);?>;
+        if (!edit) $("#div-table").hide();
 
         $('#datetimepicker').datetimepicker({
             format: 'L'
@@ -70,7 +128,12 @@ include('session.php');
             var items = [];
             var options = '<option value="">escolha um estado</option>';
             $.each(data, function (key, val) {
-                options += '<option value="' + val.nome + '">' + val.nome + '</option>';
+
+                var state = <?php if($edit) echo '"'.$state.'"'; else echo "''";?>;
+                if(val.nome == state)
+                    options += '<option selected="selected" value="' + val.nome + '">' + val.nome + '</option>';
+                else
+                    options += '<option value="' + val.nome + '">' + val.nome + '</option>';
             });
             $("#states").html(options);
 
@@ -86,7 +149,11 @@ include('session.php');
                 $.each(data, function (key, val) {
                     if(val.nome == str) {
                         $.each(val.cidades, function (key_city, val_city) {
-                            options_cidades += '<option value="' + val_city + '">' + val_city + '</option>';
+                            var city = <?php if($edit) echo '"'.$city.'"'; else echo "''";?>;
+                            if(val_city == city)
+                                options_cidades += '<option selected="selected" value="' + val_city + '">' + val_city + '</option>';
+                            else
+                                options_cidades += '<option value="' + val_city + '">' + val_city + '</option>';
                         });
                     }
                 });
@@ -143,6 +210,7 @@ include('session.php');
 
         $('#submit-bnt').click(function( event ) {
 
+            console.log(edit);
             event.preventDefault();
 
             var ownerId = <?php echo $_SESSION['user_id']; ?>;
@@ -154,10 +222,19 @@ include('session.php');
             cState = $( "#states option:selected" ).text();
             cCity = $( "#cities option:selected" ).text();
 
+            <?php
+            if(!$edit) {
+                echo 'post_data = "players=" + TableData + "&cName=" + cName + "&cDate=" + cDate + "&ownerId=" + ownerId + "&cCity=" + cCity + "&cState=" + cState + "&edit=false";';
+            }
+            else {
+                echo "var tid=".$t_id.";";
+                echo 'post_data = "t_id=" + tid +"&players=" + TableData + "&cName=" + cName + "&cDate=" + cDate + "&ownerId=" + ownerId + "&cCity=" + cCity + "&cState=" + cState + "&edit=true";';
+            }
+            ?>
             $.ajax({
                 type: "POST",
                 url: "saveNewChampionship.php",
-                data: "players=" + TableData+"&cName="+cName+"&cDate="+cDate+"&ownerId="+ownerId+"&cCity="+cCity+"&cState="+cState,
+                data: post_data,
                 success: function(data) {
                     if(data.status == 'success'){
                         alert("Campeonato adicionado com sucesso!");

@@ -29,7 +29,7 @@ include('session.php');
     <script type="text/javascript">
         $(document).ready(function(){
 
-            $("#content").load("show_championships_admin.php");
+            $("#content").load("show_tournaments_admin.php");
 
 
             $.ajaxSetup ({
@@ -38,7 +38,7 @@ include('session.php');
             });
 
             $("#overview").click(function(event){
-                $("#content").load("show_championships_admin.php");
+                $("#content").load("show_tournaments_admin.php");
             });
 
         });

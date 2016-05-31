@@ -137,8 +137,6 @@ $tournament_bonus = calc_bonus($num_players);
 
             });
 
-            console.log(JSON.stringify(players_data));
-
             $.ajax({
                 type: "POST",
                 url: "save_results.php",

@@ -106,6 +106,14 @@ body {
     min-height: 460px;
 }
 
+/* Profile Content */
+.profile-content-player {
+    padding: 20px;
+    background: #fff;
+    min-height: 460px;
+    min-width: 900px;
+}
+
 
 .twitter-typeahead .tt-query,
 .twitter-typeahead .tt-hint {

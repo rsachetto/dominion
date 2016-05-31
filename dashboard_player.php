@@ -40,6 +40,10 @@ include('session.php');
                 $("#content").load("show_ranking.php");
             });
 
+            $("#tournaments").click(function(event){
+                $("#content").load("show_user_tournaments.php");
+            });
+
         });
     </script>
 
@@ -54,7 +58,7 @@ include('session.php');
         include('player_sidebar.php');
         ?>
         <div class="col-md-9">
-            <div class="profile-content" id="content">
+            <div class="profile-content-player" id="content">
             </div>
         </div>
     </div>

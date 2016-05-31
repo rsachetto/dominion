@@ -53,26 +53,35 @@ $columns = array(
 
 require( 'ssp.class.php' );
 
-if(isset($_POST['user_id']))
-    $whereAll = "user_id = " . $_POST['user_id'];
-else $whereAll = "1 = 1";
-if($_POST['submitted'] == 'false') {
-    $whereAll = $whereAll . " AND submitted=0";
-}
-else if($_POST['submitted'] == 'true') {
-    $whereAll = $whereAll . " AND submitted=1";
 
-    if(isset($_POST['validated']) &&  $_POST['validated']=='true') {
-        $whereAll = $whereAll . " AND validated=1";
-    }
-    else {
-        $whereAll = $whereAll . " AND validated=0";
+if(!isset($_POST['player_query'])) {
+    if (isset($_POST['user_id']))
+        $whereAll = "user_id = " . $_POST['user_id'];
+    else $whereAll = "1 = 1";
+    if ($_POST['submitted'] == 'false') {
+        $whereAll = $whereAll . " AND submitted=0";
+    } else if ($_POST['submitted'] == 'true') {
+        $whereAll = $whereAll . " AND submitted=1";
+
+        if (isset($_POST['validated']) && $_POST['validated'] == 'true') {
+            $whereAll = $whereAll . " AND validated=1";
+        } else {
+            $whereAll = $whereAll . " AND validated=0";
+        }
     }
 }
+else if ($_POST['player_query'] == 'open'){
+    $whereAll = "tournament.submitted=0 and  tournament.date >= CURRENT_DATE and tournament.id not in (select tournament_has_user.tournament_id from tournament_has_user where user_id =".$_POST['user_id'].")";
+}
+else if ($_POST['player_query'] == 'subscribed') {
+    $whereAll = "tournament.submitted=0 and tournament.id in (select tournament_has_user.tournament_id from tournament_has_user where user_id =".$_POST['user_id'].")";
+}
+else if ($_POST['player_query'] == 'validated') {
+    $whereAll = "tournament.submitted=1 and tournament.validated=1 and tournament.id in (select tournament_has_user.tournament_id from tournament_has_user where user_id =".$_POST['user_id'].")";
+}
 
-error_log(json_encode(
-    SSP::complex( $_POST, $sql_details, $table, $primaryKey, $columns, $whereResult = null, $whereAll )
-));
+
+error_log($whereAll);
 
 echo json_encode(
     SSP::complex( $_POST, $sql_details, $table, $primaryKey, $columns, $whereResult = null, $whereAll )

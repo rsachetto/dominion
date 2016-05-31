@@ -18,6 +18,11 @@
                         <i class="glyphicon glyphicon-home"></i>
                         Overview </a>
                 </li>
+                <li >
+                    <a href="#" id="tournaments">
+                        <i class="glyphicon glyphicon-home"></i>
+                        Torneios </a>
+                </li>
                 <li>
                     <a href="#">
                         <i class="glyphicon glyphicon-user"></i>
