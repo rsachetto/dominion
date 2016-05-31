@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     try
     {
         /*** prepare the select statement ***/
-        $stmt = $dbh->prepare("SELECT id, username, role, name FROM user WHERE username = :myusername AND password = :mypassword");
+        $stmt = $dbh->prepare("SELECT id, username, role, name FROM dominion.user WHERE username = :myusername AND password = :mypassword");
 
         /*** bind the parameters ***/
         $stmt->bindParam(':myusername', $myusername, PDO::PARAM_STR);
@@ -19,13 +19,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         /*** execute the prepared statement ***/
         $stmt->execute();
+        error_log($stmt->error);
 
         /*** check for a result ***/
         $user_info = $stmt->fetch();
-        $user_id = $user_info['id'];
-        $role = $user_info['role'];
-        $name = $user_info['name'];
-
 
         /*** if we have no result then fail boat ***/
         if($user_info == false)
@@ -35,6 +32,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         /*** if we do have a result, all is well ***/
         else
         {
+            $user_id = $user_info['id'];
+            $role = $user_info['role'];
+            $name = $user_info['name'];
+
             /*** set the session user_id variable ***/
             $_SESSION['user_id'] = $user_id;
             $_SESSION['role'] = $role;
