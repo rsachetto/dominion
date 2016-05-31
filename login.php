@@ -26,7 +26,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $role = $user_info['role'];
         $name = $user_info['name'];
 
-        error_log(print_r($user_info, true));
 
         /*** if we have no result then fail boat ***/
         if($user_info == false)
@@ -59,6 +58,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         /*** if we are here, something has gone wrong with the database ***/
         $message = 'We are unable to process your request. Please try again later"';
     }
+
+    error_log($message);
+
 
 }
 ?>

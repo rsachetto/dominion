@@ -111,10 +111,10 @@
       <file leaf-file-name="login.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+            <state relative-caret-position="285">
+              <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
               <folding>
-                <marker date="1464737852476" expanded="true" signature="363:460" placeholder="SELECT id, u... user" />
+                <marker date="1464737955037" expanded="true" signature="363:460" placeholder="SELECT id, u... user" />
               </folding>
             </state>
           </provider>
@@ -415,14 +415,7 @@
       <workItem from="1464708792615" duration="3271000" />
       <workItem from="1464717119107" duration="37000" />
       <workItem from="1464718663787" duration="994000" />
-      <workItem from="1464723830461" duration="13676000" />
-    </task>
-    <task id="LOCAL-00133" summary="Configurações iniciais">
-      <created>1464274052729</created>
-      <option name="number" value="00133" />
-      <option name="presentableId" value="LOCAL-00133" />
-      <option name="project" value="LOCAL" />
-      <updated>1464274052729</updated>
+      <workItem from="1464723830461" duration="13778000" />
     </task>
     <task id="LOCAL-00134" summary="Configurações iniciais">
       <created>1464274347193</created>
@@ -760,11 +753,18 @@
       <option name="project" value="LOCAL" />
       <updated>1464737732092</updated>
     </task>
-    <option name="localTasksCounter" value="182" />
+    <task id="LOCAL-00182" summary="Editar torneio e outras melhorias&#10;">
+      <created>1464737858589</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1464737858589</updated>
+    </task>
+    <option name="localTasksCounter" value="183" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151234000" />
+    <option name="totallyTimeSpent" value="151336000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -788,7 +788,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3236715" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25724638" sideWeight="0.49185947" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42874396" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4335749" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1300,10 +1300,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+        <state relative-caret-position="285">
+          <caret line="61" column="22" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
           <folding>
-            <marker date="1464737852476" expanded="true" signature="363:460" placeholder="SELECT id, u... user" />
+            <marker date="1464737955037" expanded="true" signature="363:460" placeholder="SELECT id, u... user" />
           </folding>
         </state>
       </provider>
