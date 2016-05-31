@@ -4,6 +4,10 @@ require("password.php");
 session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    error_log($_POST['username']);
+    error_log($_POST['password']);
+
     $myusername = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
     $mypassword = sha1(filter_var($_POST['password'], FILTER_SANITIZE_STRING));
 
