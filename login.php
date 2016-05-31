@@ -10,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     try
     {
         /*** prepare the select statement ***/
-        $stmt = $dbh->prepare("SELECT user.id, username, role, name FROM user WHERE username = :myusername AND password = :mypassword");
+        $stmt = $dbh->prepare("SELECT id, username, role, name FROM user WHERE username = :myusername AND password = :mypassword");
 
         /*** bind the parameters ***/
         $stmt->bindParam(':myusername', $myusername, PDO::PARAM_STR);
@@ -73,7 +73,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <link href="css/signin.css" rel="stylesheet">
 
