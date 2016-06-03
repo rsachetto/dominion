@@ -19,7 +19,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
         /*** execute the prepared statement ***/
         $stmt->execute();
-        error_log($stmt->error);
 
         /*** check for a result ***/
         $user_info = $stmt->fetch();

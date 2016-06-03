@@ -5,14 +5,16 @@ include('helpers.php');
 
 $t_id = $_GET['t_id'];
 
-// do query
-$stmt = $dbh->prepare('SELECT id, user_id, date, name, city, state, bonus FROM tournament WHERE id=:t_id');
-$stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
+//// do query
+//$stmt = $dbh->prepare('SELECT id, user_id, date, name, city, state, bonus FROM tournament WHERE id=:t_id');
+//$stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
+//
+//$stmt->execute();
 
-$stmt->execute();
+//$tournament_info = array();
+//$tournament_info = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$tournament_info = array();
-$tournament_info = $stmt->fetch(PDO::FETCH_ASSOC);
+$tournament_info = get_tournament_info($dbh, $t_id);
 
 $stmt = $dbh->prepare('select user.id, user.username, user.name, tournament_has_user.num_first_places, tournament_has_user.num_second_places, tournament_has_user.champion, tournament_has_user.finalist, tournament_has_user.semi_finalist
                        from user
@@ -36,17 +38,7 @@ if(isset($_GET['validating']))
 ?>
 
 <h3>Resultados: </h3>
-
-<table class="table" id="tournament-table" style="font-size: 16px;">
-    <tbody>
-    <tr><td colspan="3">Evento: <?php echo $tournament_info['name']." (".$tournament_info['city']." - ".$tournament_info['state'].") "; ?></td></tr>
-    <tr>
-        <td>Data: <?php echo date( 'd/m/y', strtotime($tournament_info['date']));?></td>
-        <td>Quantidade de jogadores: <?php echo $num_players; ?></td>
-        <td>Coeficiente: <?php echo $tournament_info['bonus']; ?></td>
-    </tr>
-    </tbody>
-</table>
+<?php include 'tournament_header.php'; ?>
 <table class="table table-striped" id="players-table">
     <thead>
     <tr>

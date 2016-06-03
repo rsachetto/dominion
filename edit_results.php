@@ -11,52 +11,44 @@ if(isset($_GET['edit'])) {
 }
 
 // do query
-$stmt = $dbh->prepare('SELECT id, user_id, date, name, city, state FROM tournament WHERE id=:t_id and user_id=:user_id');
-$stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
-$stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+//$stmt = $dbh->prepare('SELECT id, user_id, date, name, city, state FROM tournament WHERE id=:t_id and user_id=:user_id');
+//$stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
+//$stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+//
+//$stmt->execute();
+//
+//$tournament_info = array();
+//$tournament_info = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$stmt->execute();
-
-$tournament_info = array();
-$tournament_info = $stmt->fetch(PDO::FETCH_ASSOC);
-
+$tournament_info = get_tournament_info($dbh, $t_id);
+$players = array();
 // do query
 if($edit) {
 
-    $stmt = $dbh->prepare('select user.id, user.username, user.name, tournament_has_user.num_first_places, tournament_has_user.num_second_places, tournament_has_user.champion, tournament_has_user.finalist, tournament_has_user.semi_finalist
-                           from user
-                              join tournament_has_user on (user.id = tournament_has_user.user_id)
-                              join tournament on (tournament_has_user.tournament_id = :t_id)
-                              GROUP BY user.id;');
+   // $stmt = $dbh->prepare('select user.id, user.username, user.name, tournament_has_user.num_first_places, tournament_has_user.num_second_places, tournament_has_user.champion, tournament_has_user.finalist, tournament_has_user.semi_finalist
+   //                        from user
+   //                           join tournament_has_user on (user.id = tournament_has_user.user_id)
+   //                           join tournament on (tournament_has_user.tournament_id = :t_id)
+   //                           GROUP BY user.id;');
+    $players = get_tournament_players_with_scores($dbh, $t_id);
 }
 else {
-    $stmt = $dbh->prepare('SELECT id, username, name FROM user WHERE id IN (SELECT user_id FROM tournament_has_user WHERE tournament_id=:t_id)');
+   // $stmt = $dbh->prepare('SELECT id, username, name FROM user WHERE id IN (SELECT user_id FROM tournament_has_user WHERE tournament_id=:t_id)');
+    $players = get_tournament_players($dbh, $t_id);
 }
 
 
-$stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
-
-$stmt->execute();
-
-$players = array();
-$players = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//$stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
+//$stmt->execute();
+//$players = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $num_players = count($players);
 
-$tournament_bonus = calc_bonus($num_players);
+$tournament_info['bonus'] = calc_bonus($num_players);
 
 ?>
 
-<table class="table" id="tournament-table" style="font-size: 16px;">
-    <tbody>
-        <tr><td colspan="3">Evento: <?php echo $tournament_info['name']." (".$tournament_info['city']." - ".$tournament_info['state'].") "; ?></td></tr>
-        <tr>
-            <td>Data: <?php echo date( 'd/m/y', strtotime($tournament_info['date']));?></td>
-            <td>Quantidade de jogadores: <?php echo $num_players; ?></td>
-            <td>Coeficiente: <?php echo $tournament_bonus; ?></td>
-        </tr>
-    </tbody>
-</table>
+<?php include 'tournament_header.php'; ?>
 <table class="table table-striped" id="players-table">
     <thead>
     <tr>

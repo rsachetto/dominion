@@ -46,5 +46,37 @@ function calc_bonus($num_players) {
     }
 
     return 1;
+}
 
+function get_tournament_info($dbh, $t_id) {
+    // do query
+    $stmt = $dbh->prepare('SELECT id, date, name, city, state, address, bonus FROM dominion.tournament WHERE id=:t_id');
+    $stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
+
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function get_tournament_players_with_scores($dbh, $t_id) {
+    $stmt = $dbh->prepare('select user.id, user.username, user.name, tournament_has_user.num_first_places, tournament_has_user.num_second_places, tournament_has_user.champion, tournament_has_user.finalist, tournament_has_user.semi_finalist
+                           from dominion.user
+                              join dominion.tournament_has_user on (user.id = tournament_has_user.user_id)
+                              join dominion.tournament on (tournament_has_user.tournament_id = :t_id)
+                              GROUP BY user.id;');
+
+    $stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+}
+
+function get_tournament_players($dbh, $t_id)
+{
+    $stmt = $dbh->prepare('SELECT id, username, name FROM dominion.user WHERE id IN (SELECT user_id FROM dominion.tournament_has_user WHERE tournament_id=:t_id)');
+    $stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
+
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }

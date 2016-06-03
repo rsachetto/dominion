@@ -6,21 +6,22 @@ $t_id = $_GET['t_id'];
 $user_id = $_GET['user_id'];
 
 // do query
-$stmt = $dbh->prepare('SELECT id, date, name, city, state FROM tournament WHERE id=:t_id');
-$stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
+//$stmt = $dbh->prepare('SELECT id, date, name, city, state FROM dominion.tournament WHERE id=:t_id');
+//$stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
+//
+//$stmt->execute();
+//
+//$tournament_info = array();
+$tournament_info = get_tournament_info($dbh, $t_id);
 
-$stmt->execute();
+//$stmt = $dbh->prepare('SELECT id, username, name FROM dominion.user WHERE id IN (SELECT user_id FROM dominion.tournament_has_user WHERE tournament_id=:t_id)');
+//$stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
+//
+//$stmt->execute();
 
-$tournament_info = array();
-$tournament_info = $stmt->fetch(PDO::FETCH_ASSOC);
-
-$stmt = $dbh->prepare('SELECT id, username, name FROM user WHERE id IN (SELECT user_id FROM tournament_has_user WHERE tournament_id=:t_id)');
-$stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
-
-$stmt->execute();
-
-$players = array();
-$players = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//$players = array();
+//$players = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$players = get_tournament_players($dbh, $t_id);
 
 $subscribed = false;
 
@@ -31,24 +32,11 @@ foreach ($players as $player) {
     }
 }
 
-error_log(print_r($players, true));
-
 $num_players = count($players);
 
-$tournament_bonus = calc_bonus($num_players);
-
+$tournament_info['bonus'] = calc_bonus($num_players);
 ?>
-
-<table class="table" id="tournament-table" style="font-size: 16px;">
-    <tbody>
-    <tr><td colspan="3">Evento: <?php echo $tournament_info['name']." (".$tournament_info['city']." - ".$tournament_info['state'].") "; ?></td></tr>
-    <tr>
-        <td>Data: <?php echo date( 'd/m/y', strtotime($tournament_info['date']));?></td>
-        <td>Quantidade de jogadores: <?php echo $num_players; ?></td>
-        <td>Coeficiente: <?php echo $tournament_bonus; ?></td>
-    </tr>
-    </tbody>
-</table>
+<?php include 'tournament_header.php'; ?>
 <table class="table table-striped" id="players-table">
     <thead>
     <tr>

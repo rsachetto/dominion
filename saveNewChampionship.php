@@ -15,16 +15,17 @@ $cName = stripcslashes($_POST['cName']);
 $cDate = $_POST['cDate'];
 $cState = $_POST['cState'];
 $cCity = $_POST['cCity'];
+$cAddr = $_POST['cAddr'];
 $ownerId = stripcslashes($_POST['ownerId']);
 
 
 /*** prepare the insert ***/
 if($edit == 'false') {
-    $stmt = $dbh->prepare("INSERT INTO tournament (name, date, user_id, state, city ) VALUES (:name, :date, :user_id, :state, :city)");
+    $stmt = $dbh->prepare("INSERT INTO dominion.tournament (name, date, user_id, state, city, address ) VALUES (:name, :date, :user_id, :state, :city, :addr)");
 }
 else {
     $tId = $_POST['t_id'];
-    $stmt = $dbh->prepare("UPDATE dominion.tournament SET name=:name, date=:date, user_id=:user_id, state=:state, city=:city WHERE id=:t_id");
+    $stmt = $dbh->prepare("UPDATE dominion.tournament SET name=:name, date=:date, user_id=:user_id, state=:state, city=:city, address=:addr WHERE id=:t_id");
     $stmt->bindParam(':t_id', $tId, PDO::PARAM_STR);
 }
 
@@ -34,6 +35,7 @@ $stmt->bindParam(':date', $cDate, PDO::PARAM_STR);
 $stmt->bindParam(':user_id', $ownerId, PDO::PARAM_INT);
 $stmt->bindParam(':state', $cState, PDO::PARAM_STR);
 $stmt->bindParam(':city', $cCity, PDO::PARAM_STR);
+$stmt->bindParam(':addr', $cAddr, PDO::PARAM_STR);
 
 /*** execute the prepared statement ***/
 $success = $stmt->execute();

@@ -1,5 +1,6 @@
 <?php
 include('session.php');
+include 'helpers.php';
 $name = "";
 $date = "";
 $players = array();
@@ -14,32 +15,37 @@ if(isset($_GET['t_id'])) {
     $user_id = $_SESSION['user_id'];
 
 // do query
-    $stmt = $dbh->prepare('SELECT id, user_id, date, name, city, state FROM tournament WHERE id=:t_id and user_id=:user_id');
-    $stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
-    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+//    $stmt = $dbh->prepare('SELECT id, user_id, date, name, city, state, address FROM dominion.tournament WHERE id=:t_id and user_id=:user_id');
+//    $stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
+//    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+//
+//    $stmt->execute();
+//
+//    $tournament_info = array();
+//    $tournament_info = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    $stmt->execute();
+    $tournament_info = get_tournament_info($dbh, $t_id);
 
-    $tournament_info = array();
-    $tournament_info = $stmt->fetch(PDO::FETCH_ASSOC);
+//    $stmt = $dbh->prepare('select user.id, user.username, user.name, tournament_has_user.num_first_places, tournament_has_user.num_second_places, tournament_has_user.champion, tournament_has_user.finalist, tournament_has_user.semi_finalist
+//                           from user
+//                              join tournament_has_user on (user.id = tournament_has_user.user_id)
+//                              join tournament on (tournament_has_user.tournament_id = :t_id)
+//                              GROUP BY user.id;');
+//
+//    $stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
+//    $stmt->execute();
+//
+//    $players = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    $stmt = $dbh->prepare('select user.id, user.username, user.name, tournament_has_user.num_first_places, tournament_has_user.num_second_places, tournament_has_user.champion, tournament_has_user.finalist, tournament_has_user.semi_finalist
-                           from user
-                              join tournament_has_user on (user.id = tournament_has_user.user_id)
-                              join tournament on (tournament_has_user.tournament_id = :t_id)
-                              GROUP BY user.id;');
-
-    $stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
-    $stmt->execute();
-
-    $players = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $players = get_tournament_players($dbh, $t_id);
 
     $name = $tournament_info['name'];
-    $date = date( 'd/m/y', strtotime($tournament_info['date']));
+    $date = date( 'd/m/y H:i', strtotime($tournament_info['date']));
     $state = $tournament_info['state'];
     $city = $tournament_info['city'];
+    $address = $tournament_info['address'];
 
-    error_log(print_r($players, true));
+    error_log($address);
 
 }
 
@@ -56,8 +62,12 @@ else
         <input type="text" class="form-control" id="name" placeholder="Nome do torneio" value="<?php echo $name; ?>" >
     </div>
     <div class="form-group">
-        <label for="datetimepicker">Data de realização:</label>
+        <label for="datetimepicker">Data e Hora de realização:</label>
         <input type="text" class="form-control" id="datetimepicker" placeholder="Data de realização" value="<?php echo $date; ?>">
+    </div>
+    <div class="form-group">
+        <label for="address">Endereço:</label>
+        <textarea rows="4" cols="50" class="form-control" id="address" placeholder="Endereço"><?php if($address != '' ) echo $address; ?></textarea>
     </div>
     <div class="row">
         <div class="col-xs-4">
@@ -121,7 +131,7 @@ else
         if (!edit) $("#div-table").hide();
 
         $('#datetimepicker').datetimepicker({
-            format: 'L'
+            sideBySide: true
         });
 
         $.getJSON('js/estados_cidades.json', function (data) {
@@ -218,17 +228,18 @@ else
             var TableData;
             TableData =  JSON.stringify(storeTblValues());
             cName = $('#name').val();
-            cDate = $('#datetimepicker').data("DateTimePicker").date().format("YYYY-MM-DD");
+            cDate = $('#datetimepicker').data("DateTimePicker").date().format("YYYY-MM-DD HH:mm");
             cState = $( "#states option:selected" ).text();
             cCity = $( "#cities option:selected" ).text();
+            cAddr = $('#address').val();
 
             <?php
             if(!$edit) {
-                echo 'post_data = "players=" + TableData + "&cName=" + cName + "&cDate=" + cDate + "&ownerId=" + ownerId + "&cCity=" + cCity + "&cState=" + cState + "&edit=false";';
+                echo 'post_data = "players=" + TableData + "&cName=" + cName + "&cDate=" + cDate + "&ownerId=" + ownerId + "&cCity=" + cCity + "&cState=" + cState + "&cAddr=" + cAddr + "&edit=false";';
             }
             else {
                 echo "var tid=".$t_id.";";
-                echo 'post_data = "t_id=" + tid +"&players=" + TableData + "&cName=" + cName + "&cDate=" + cDate + "&ownerId=" + ownerId + "&cCity=" + cCity + "&cState=" + cState + "&edit=true";';
+                echo 'post_data = "t_id=" + tid +"&players=" + TableData + "&cName=" + cName + "&cDate=" + cDate + "&ownerId=" + ownerId + "&cCity=" + cCity + "&cState=" + cState + "&cAddr=" + cAddr + "&edit=true";';
             }
             ?>
             $.ajax({

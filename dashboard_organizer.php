@@ -1,4 +1,7 @@
 <?php
+
+//TODO: o organizador pode ser também jogador, então ele tera o mesmo menu do jogador e podera se inscrever em torneios
+
 include('session.php');
 ?>
 <html>

@@ -11,22 +11,11 @@ function cmp_rank($a1, $b1)
     return ($a > $b) ? -1 : 1;
 }
 
-
 include 'session.php';
-
-//{"draw":1,"recordsTotal":4,"recordsFiltered":4,"data":[{"id":"8","name":"Teste2","date":"26\/05\/16","city":"Alvar\u00e3es","state":"Amazonas"}]}
-
-$stmt = $dbh->prepare('select * from dominion.ranking');
-$stmt->execute();
-
-$tournament_results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//error_log(print_r($tournament_results, true));
-
 $prk_count = array();
 $prk_user = array();
 
-$filter= false;
-
+//TODO: aqui na verdade eu tenho que mudar o select e usar somente o estado do jogador
 if ( isset($_POST['search']) && $_POST['search']['value'] != '' ) {
 
     $estadosBrasileiros = array(
@@ -62,11 +51,16 @@ if ( isset($_POST['search']) && $_POST['search']['value'] != '' ) {
     $str = $_POST['search']['value'];
 
     $estado = $estadosBrasileiros[$str];
-
-    $filter = true;
-
-
+    $stmt = $dbh->prepare('select * from dominion.ranking WHERE ranking.state=:state');
+    $stmt->bindParam(':state', $estado, PDO::PARAM_STR);
 }
+else {
+    $stmt = $dbh->prepare('select * from dominion.ranking');
+}
+
+$stmt->execute();
+
+$tournament_results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 foreach ($tournament_results as $result) {
 
@@ -78,20 +72,9 @@ foreach ($tournament_results as $result) {
 
 
     if(intval($prk_count[$id]) <= 8) {
-        if(!$filter) {
-            $prk_label = 'prk' . $prk_count[$id];
-            $prk_user[$id][$prk_label] = $result['prk'];
-            $prk_count[$id] += 1;
-        }
-        else {
-            error_log($result['state'].' - '.$estado);
-            if($result['state'] == $estado) {
-                $prk_label = 'prk' . $prk_count[$id];
-                error_log($prk_label.' - '.$result['prk']);
-                $prk_user[$id][$prk_label] = $result['prk'];
-                $prk_count[$id] += 1;
-            }
-        }
+        $prk_label = 'prk' . $prk_count[$id];
+        $prk_user[$id][$prk_label] = $result['prk'];
+        $prk_count[$id] += 1;
     }
 
 }
@@ -125,8 +108,6 @@ foreach ($out as &$prks) {
     $count++;
 }
 
-
-//TODO: tem que ver a melhor forma de retornar esse resultados
 $recordsTotal = count($out);
 $recordsFiltered = $recordsTotal;
 
