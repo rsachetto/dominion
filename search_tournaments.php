@@ -43,9 +43,6 @@ $columns = array(
     array( 'db' => 'state',     'dt' => 'state' ),
 );
 
-
-
-
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * If you just want to use the basic configuration for DataTables with PHP
  * server-side, there is no need to edit below this line.
@@ -79,7 +76,6 @@ else if ($_POST['player_query'] == 'subscribed') {
 else if ($_POST['player_query'] == 'validated') {
     $whereAll = "tournament.submitted=1 and tournament.validated=1 and tournament.id in (select tournament_has_user.tournament_id from tournament_has_user where user_id =".$_POST['user_id'].")";
 }
-
 
 error_log($whereAll);
 

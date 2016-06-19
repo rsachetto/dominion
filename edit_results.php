@@ -64,10 +64,8 @@ $tournament_info['bonus'] = calc_bonus($num_players);
         var edit = <?php echo $edit; ?>;
         var players_data = <?php echo json_encode($players); ?>;
 
-        console.log(players_data);
-
         if(edit == 1) {
-            console.log("EDITAR");
+            
             $('#players-table').find('tbody>tr').each(function(row, tr){
                 $(tr).find('td:eq(1) input').val(players_data[row]['num_first_places']);
                 $(tr).find('td:eq(2) input').val(players_data[row]['num_second_places']);

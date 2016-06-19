@@ -19,12 +19,12 @@
                         Overview </a>
                 </li>
                 <li>
-                    <a href="#" id="add-champ">
+                    <a href="#" id="add-organizer">
                         <i class="glyphicon glyphicon-plus"></i>
-                        Adicionar organizador </a>
+                        Gerenciar organizadores </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" id="account">
                         <i class="glyphicon glyphicon-user"></i>
                         Minha Conta </a>
                 </li>

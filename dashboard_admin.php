@@ -41,6 +41,14 @@ include('session.php');
                 $("#content").load("show_tournaments_admin.php");
             });
 
+            $("#account").click(function(event){
+                $("#content").load("create_user_form.php?edit=true");
+            });
+
+            $("#add-organizer").click(function(event){
+                $("#content").load("show_users_admin.php");
+            });
+
         });
     </script>
 

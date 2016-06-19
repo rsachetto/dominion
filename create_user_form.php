@@ -35,8 +35,15 @@ if (!$edit) {
     /*** set the session form token ***/
     $_SESSION['form_token'] = $form_token;
 }
-else
+else {
     echo '<h2>Editar Usuário</h2>';
+
+    /*** set a form token ***/
+    $form_token = md5( uniqid('auth', true) );
+
+    /*** set the session form token ***/
+    $_SESSION['form_token'] = $form_token;
+}
 ?>
 
 
@@ -98,7 +105,7 @@ else
                 $('.btn-primary').click(function(){
 
                     var post_data = 'current_password='+ $('#current-password').val() + '&new_password='+ $('#new-password').val() + '&new_password2='+ $('#new-password2').val();
-                    console.log(post_data);
+
                     $.ajax({
                         type: "POST",
                         url: "change_password.php",
@@ -159,10 +166,8 @@ else
 
 
         $('#submit-bnt').click(function( event ) {
-//
-//            console.log(edit);
             event.preventDefault();
-//
+
             <?php
                 if($edit) {
                  echo 'var userId ='.$_SESSION['user_id'].';';
@@ -187,8 +192,6 @@ else
                 echo 'post_data = "token=" + token + "&u_id=" + uid + "&username=" + username + "&name=" + name + "&password=" + password + "&email=" + email + "&city=" + city + "&state=" + state + "&edit=true";';
             }
             ?>
-
-            console.log(post_data);
 
             $.ajax({
                 type: "POST",

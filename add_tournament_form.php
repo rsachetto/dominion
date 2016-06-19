@@ -199,7 +199,6 @@ else
 
         $('#submit-bnt').click(function( event ) {
 
-            console.log(edit);
             event.preventDefault();
 
             var ownerId = <?php echo $_SESSION['user_id']; ?>;
