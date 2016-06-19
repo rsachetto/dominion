@@ -15,7 +15,6 @@ include 'session.php';
 $prk_count = array();
 $prk_user = array();
 
-//TODO: aqui na verdade eu tenho que mudar o select e usar somente o estado do jogador
 if ( isset($_POST['search']) && $_POST['search']['value'] != '' ) {
 
     $estadosBrasileiros = array(

@@ -32,6 +32,8 @@ include('session.php');
     <script type="text/javascript">
         $(document).ready(function(){
 
+
+
             $("#content").load("show_tournaments.php");
 
 
@@ -46,6 +48,11 @@ include('session.php');
 
             $("#add-champ").click(function(event){
                 $("#content").load("add_tournament_form.php");
+            });
+
+            $("#account").click(function(event){
+
+                $("#content").load("create_user_form.php?edit=true");
             });
 
         });

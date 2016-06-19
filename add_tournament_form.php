@@ -14,28 +14,7 @@ if(isset($_GET['t_id'])) {
     $t_id = $_GET['t_id'];
     $user_id = $_SESSION['user_id'];
 
-// do query
-//    $stmt = $dbh->prepare('SELECT id, user_id, date, name, city, state, address FROM dominion.tournament WHERE id=:t_id and user_id=:user_id');
-//    $stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
-//    $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
-//
-//    $stmt->execute();
-//
-//    $tournament_info = array();
-//    $tournament_info = $stmt->fetch(PDO::FETCH_ASSOC);
-
     $tournament_info = get_tournament_info($dbh, $t_id);
-
-//    $stmt = $dbh->prepare('select user.id, user.username, user.name, tournament_has_user.num_first_places, tournament_has_user.num_second_places, tournament_has_user.champion, tournament_has_user.finalist, tournament_has_user.semi_finalist
-//                           from user
-//                              join tournament_has_user on (user.id = tournament_has_user.user_id)
-//                              join tournament on (tournament_has_user.tournament_id = :t_id)
-//                              GROUP BY user.id;');
-//
-//    $stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
-//    $stmt->execute();
-//
-//    $players = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     $players = get_tournament_players($dbh, $t_id);
 

@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $message = 'We are unable to process your request. Please try again later"';
     }
 
-    error_log($message);
+    error_log($mypassword);
 
 
 }
@@ -75,6 +75,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -84,11 +85,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <title>Login Page</title>
 
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            $("#create").click(function(event){
+                $("#form-container").load("create_user_form.php");
+            });
+
+        });
+    </script>
+
 </head>
 
 <body>
 
-<div class="container">
+<div class="container" id="form-container">
 
     <form class="form-signin" action = "" method = "post" >
         <h2 class="form-signin-heading">Login</h2>
@@ -96,10 +107,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="text" name="username" class="form-control" placeholder="Usuário" required autofocus>
         <label for="password" class="sr-only">Password</label>
         <input type="password" name="password" class="form-control" placeholder="Senha" required>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+        <p>Não possui uma conta? <a href="#" id="create">Clique aqui para criar</a></p>
     </form>
 
 </div> <!-- /container -->
+
 
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->

@@ -24,7 +24,7 @@
                         Torneios </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" id="account">
                         <i class="glyphicon glyphicon-user"></i>
                         Minha Conta </a>
                 </li>

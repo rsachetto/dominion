@@ -58,6 +58,16 @@ function get_tournament_info($dbh, $t_id) {
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
+function get_user_info($dbh, $u_id) {
+    // do query
+    $stmt = $dbh->prepare('SELECT username, email, name, city, state FROM dominion.user WHERE id=:u_id');
+    $stmt->bindParam(':u_id', $u_id, PDO::PARAM_INT);
+
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
 function get_tournament_players_with_scores($dbh, $t_id) {
     $stmt = $dbh->prepare('select user.id, user.username, user.name, tournament_has_user.num_first_places, tournament_has_user.num_second_places, tournament_has_user.champion, tournament_has_user.finalist, tournament_has_user.semi_finalist
                            from dominion.user

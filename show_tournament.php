@@ -5,22 +5,7 @@ include('helpers.php');
 $t_id = $_GET['t_id'];
 $user_id = $_GET['user_id'];
 
-// do query
-//$stmt = $dbh->prepare('SELECT id, date, name, city, state FROM dominion.tournament WHERE id=:t_id');
-//$stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
-//
-//$stmt->execute();
-//
-//$tournament_info = array();
 $tournament_info = get_tournament_info($dbh, $t_id);
-
-//$stmt = $dbh->prepare('SELECT id, username, name FROM dominion.user WHERE id IN (SELECT user_id FROM dominion.tournament_has_user WHERE tournament_id=:t_id)');
-//$stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
-//
-//$stmt->execute();
-
-//$players = array();
-//$players = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $players = get_tournament_players($dbh, $t_id);
 
 $subscribed = false;

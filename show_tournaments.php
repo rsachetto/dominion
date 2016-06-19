@@ -2,8 +2,8 @@
 
 <ul id="tabs" class="nav nav-tabs" role="tablist">
     <li class="active"><a id="no-results-tab" href="#no-results-tab-content" role="tab" data-toggle="tab">Campeonatos sem resultado</a></li>
-    <li><a href="#sent-results-tab-content" role="tab" data-toggle="tab">Campeonatos com resultados enviados</a></li>
-    <li><a href="#validated-results-tab-content" role="tab" data-toggle="tab">Campeonatos com resultados validados</a></li>
+    <li><a href="#sent-results-tab-content" role="tab" data-toggle="tab">Campeonatos enviados</a></li>
+    <li><a href="#validated-results-tab-content" role="tab" data-toggle="tab">Campeonatos validados</a></li>
 </ul>
 <div class="tab-content">
     <div class="tab-pane fade active in" id="no-results-tab-content">
