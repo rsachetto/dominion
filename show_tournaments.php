@@ -8,8 +8,6 @@
 <div class="tab-content">
     <div class="tab-pane fade active in" id="no-results-tab-content">
         <br/>
-        <div class="table-responsive">
-
         <table class="table table-bordered" id="open-champs-table">
             <thead>
             <tr>
@@ -24,11 +22,10 @@
             <tbody>
             </tbody>
         </table>
-        </div>
     </div>
     <div class="tab-pane fade" id="sent-results-tab-content">
         <br/>
-            <table class="table table-bordered" id="sent-champs-table" width="100%">
+            <table class="table table-bordered" id="sent-champs-table">
             <thead>
             <tr>
                 <th>ID</th>
@@ -45,7 +42,7 @@
     </div>
     <div class="tab-pane fade" id="validated-results-tab-content" >
         <br/>
-        <table class="table table-bordered" id="validated-champs-table" width="100%">
+        <table class="table table-bordered" id="validated-champs-table">
             <thead>
             <tr>
                 <th>ID</th>
