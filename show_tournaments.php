@@ -64,7 +64,7 @@
     jQuery(document).ready(function() {
 
         var open_champs_table = $('#open-champs-table').DataTable( {
-            responsive: true,
+            //responsive: true,
             "processing": true,
             "serverSide": true,
             "ajax": {
@@ -126,7 +126,7 @@
         } );
 
         var validated_champs_table = $('#validated-champs-table').DataTable( {
-            responsive: true,
+            //responsive: true,
             "processing": true,
             "serverSide": true,
             "ajax": {
