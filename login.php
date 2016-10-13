@@ -99,6 +99,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 
+<img src="img/logo.gif"/>
+
 <div class="container" id="form-container">
 
     <form class="form-signin" action = "" method = "post" >
