@@ -1,5 +1,8 @@
 <div class="col-md-3">
     <div class="profile-sidebar">
+        <div>
+            <img alt="Dominion" src="img/logo.gif" class="img-responsive"  style="width:250px;margin:auto;">
+        </div>
         <!-- SIDEBAR USER TITLE -->
         <div class="profile-usertitle">
             <div class="profile-usertitle-name">

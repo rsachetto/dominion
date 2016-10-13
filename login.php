@@ -98,13 +98,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-
+<div>
+<img alt="Dominion" src="img/logo.gif" class="img-responsive"  style="width:500px;margin:auto;">
+</div>
 <div class="container" id="form-container">
-    
-    <div class="col-md-4">
-        <img alt="Dominion" src="img/logo.gif" class="img-responsive">
-    </div>
-
     <form class="form-signin" action = "" method = "post" >
         <h2 class="form-signin-heading">Login</h2>
         <label for="username" class="sr-only">Email address</label>
