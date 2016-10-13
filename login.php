@@ -99,10 +99,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 
-
-
 <div class="container" id="form-container">
-    <img src="img/logo.gif"/>
+    
+    <div class="col-md-4">
+        <img alt="Dominion" src="img/logo.gif" class="img-responsive">
+    </div>
+
     <form class="form-signin" action = "" method = "post" >
         <h2 class="form-signin-heading">Login</h2>
         <label for="username" class="sr-only">Email address</label>
@@ -114,8 +116,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 
 </div> <!-- /container -->
-
-
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="js/ie10-viewport-bug-workaround.js"></script>
