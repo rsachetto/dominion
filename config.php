@@ -5,7 +5,7 @@ if (getenv('MYSQL_SERVICE_HOST')) {
     define('DB_PORT', getenv('MYSQL_SERVICE_PORT'));
     define('DB_USER', getenv('MYSQL_USER'));
     define('DB_PASS', getenv('MYSQL_PASSWORD'));
-    define('DB_NAME', getenv('dominion'));
+    define('DB_NAME', getenv('MYSQL_DATABASE'));
 }
 else {
     define('DB_HOST', 'localhost');
