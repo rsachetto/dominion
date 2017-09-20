@@ -52,7 +52,7 @@ include('session.php');
         });
     </script>
 
-    <title>Bem vindo adminstrador </title>
+    <title>Bem vindo administrador</title>
 </head>
 
 <body>

@@ -51,7 +51,7 @@ include('session.php');
         });
     </script>
 
-    <title>Bem vindo organizador </title>
+    <title>Bem vindo jogador </title>
 </head>
 
 <body>
