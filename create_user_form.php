@@ -204,7 +204,9 @@ else {
                             window.location = 'login.php'
                         }
                         else {
-                            alert("Usuário atualizado com sucesso!");
+				alert("Usuário atualizado com sucesso!");
+				window.location.reload();
+
                         }
                     }else {
                         alert(data.status);
